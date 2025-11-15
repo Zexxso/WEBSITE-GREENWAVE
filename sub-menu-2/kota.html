@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenWave - Makes Life Better!</title>
+
+  <link rel="icon" href="../asset/image/logo-mini-16x16.png" type="image/png">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top scrolled">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <i class="fas fa-bars fs-4 text-dark"></i>
+    </button>
+
+    <a class="navbar-brand mx-auto" href="../index.html">
+      <img src="../asset/image/logo-rev-copy.png" alt="GreenWave Logo" class="logo-main">
+    </a>
+
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start mt-3 mt-lg-0">
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../tentang-kami.html" role="button">Tentang Kami</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-1/tim-kami.html">Tim Kami</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/laporan-tahunan.html">Laporan Tahunan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/pekerjaan.html">Pekerjaan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/faq.html">Pertanyaan Umum</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../fokus-kerja.html" role="button">Fokus Kerja</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="hutan.html">Hutan</a></li>
+            <li><a class="dropdown-item" href="iklim.html">Iklim & Energi</a></li>
+            <li><a class="dropdown-item" href="laut.html">Laut</a></li>
+            <li><a class="dropdown-item" href="kota.html">Perkotaan</a></li>
+            <li><a class="dropdown-item" href="masa-depan.html">Masa Depan Alternatif</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../kabar-terbaru.html" role="button">Kabar Terbaru</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-3/siaran-pers.html">Siaran Pers</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/cerita.html">Cerita</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/riset.html">Riset</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/kemenangan.html">Kemenangan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/siniar.html">Siniar</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../mari-beraksi.html" role="button">Mari Beraksi</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-4/bergabung-relawan.html">Bergabung Relawan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-4/petisi.html">Petisi</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-4/magang.html">Magang</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-4/berlangganan-informasi.html">Berlangganan Informasi</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a href="../donasi.html" class="btn btn-donasi">Donasi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-sub-nav d-lg-none">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="../tentang-kami.html">Tentang Kami</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../fokus-kerja.html">Fokus Kerja</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../kabar-terbaru.html">Kabar Terbaru</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../mari-beraksi.html">Mari Beraksi</a> </li>
+    </ul>
+</div>
+
+<!-- OFF Canvas Mobile Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  
+  <div class="offcanvas-header">
+    <a href="#">
+        <img src="../asset/image/logo-mini.png" alt="GreenWave Logo" class="logo-mobile-offcanvas">
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body d-flex flex-column p-0">
+    
+    <div class="accordion accordion-flush mobile-nav-accordion" id="mobileMenuAccordion">
+      
+      <div class="mobile-nav-item">
+        <a href="../index.html" class="nav-link-top">Home</a>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingOne">
+          <a href="../tentang-kami.html" class="nav-link-split">
+            Tentang Kami
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-1/tim-kami.html" class="dropdown-item">Tim Kami</a>
+            <a href="../sub-menu-1/laporan-tahunan.html" class="dropdown-item">Laporan Tahunan</a>
+            <a href="../sub-menu-1/pekerjaan.html" class="dropdown-item">Pekerjaan</a>
+            <a href="../sub-menu-1/faq.html" class="dropdown-item">Pertanyaan Umum</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingTwo">
+          <a href="../fokus-kerja.html" class="nav-link-split">
+            Fokus Kerja
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="hutan.html" class="dropdown-item">Hutan</a>
+            <a href="iklim.html" class="dropdown-item">Iklim & Energi</a>
+            <a href="laut.html" class="dropdown-item">Laut</a>
+            <a href="kota.html" class="dropdown-item">Perkotaan</a>
+            <a href="masa-depan.html" class="dropdown-item">Masa Depan Alternatif</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingThree">
+          <a href="../kabar-terbaru.html" class="nav-link-split">
+            Kabar Terbaru
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-3/siaran-pers.html" class="dropdown-item">Siaran Pers</a>
+            <a href="../sub-menu-3/cerita.html" class="dropdown-item">Cerita</a>
+            <a href="../sub-menu-3/riset.html" class="dropdown-item">Riset</a>
+            <a href="../sub-menu-3/kemenangan.html" class="dropdown-item">Kemenangan</a>
+            <a href="../sub-menu-3/siniar.html" class="dropdown-item">Siniar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingFour">
+          <a href="../mari-beraksi.html" class="nav-link-split">
+            Mari Beraksi
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-4/bergabung-relawan.html" class="dropdown-item">Bergabung Relawan</a>
+            <a href="../sub-menu-4/petisi.html" class="dropdown-item">Petisi</a>
+            <a href="../sub-menu-4/magang.html" class="dropdown-item">Magang</a>
+            <a href="../sub-menu-4/berlangganan-informasi.html" class="dropdown-item">Berlangganan Informasi</a>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+    <div class="mt-auto p-3">
+      <a href="../donasi.html" class="btn btn-donasi w-100">
+          Donasi
+      </a>
+    </div>
+    
+  </div> </div>
+
+<section class="join-us-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+        <div class="col-lg-6 join-text-content">
+            <h1>
+                <span class="highlight-bg">Tantangan Kualitas Hidup</span>
+            </h1>
+            <p>
+                Kita menghadapi krisis perkotaan yang semakin nyata. Polusi udara, banjir, sampah plastik sekali pakai, dan kemacetan parah adalah dampak langsung dari perencanaan kota yang buruk dan ketergantungan pada kendaraan pribadi.
+            </p>
+        </div>
+
+      <div class="col-lg-6 join-image-content">
+        <img src="../asset/image/perkotaan-hero-img.jpg" alt="Iklim & Energi Greenwave" class="join-image img-fluid">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="stats-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="stat-icon mb-3">
+          <i class="fas fa-city fa-3x"></i> 
+        </div>
+        <h2 class="stat-number">36</h2>
+        <p class="stat-text">
+          dari 100 ribu kematian di Jakarta dikaitkan dengan polusi PM2.5.
+        </p>
+      </div>
+
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="stat-icon mb-3">
+          <i class="fas fa-users fa-3x"></i>
+        </div>
+        <h2 class="stat-number">56,7</h2>
+        <p class="stat-text">
+          persen dari total populasi Indonesia tinggal di daerah perkotaan.
+        </p>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="stat-icon mb-3">
+          <i class="fas fa-thermometer-half fa-3x"></i>
+        </div>
+        <h2 class="stat-number">38</h2>
+        <p class="stat-text">
+          TPA terbakar sepanjang Juni - Oktober 2023 di berbagai daerah di Indonesia.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="content-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="../asset/image/polusi-img.jpg" alt="Polusi Udara" class="img-fluid rounded shadow-sm">
+      </div>
+      
+      <div class="col-lg-6">
+        <h2>Tua Di Jalan, Terbiasa Menghirup Asap Kendaraan</h2>
+        <p>
+          Di kota, pemandangan polusi, macet, dan banjir barangkali sudah dianggap wajar terjadi. Sejumlah kota di Indonesia bahkan tidak memiliki akses transportasi umum yang memadai, sehingga warganya harus menggunakan kendaraan pribadi yang berimbas pada tingginya tingkat kemacetan dan polusi. Lebih dari itu, masalah perkotaan juga berdampak pada kesehatan fisik dan mental warganya.
+        </p>
+        <p>
+            Padahal kita semua berhak atas lingkungan kota yang bersih dan sehat untuk masa depan yang lebih baik. Pemerintah kota yang baik adalah pemerintah kota yang mengupayakan solusi yang adil atas masalah perkotaan yang sudah ada, tanpa menambah masalah baru. Karena kota adalah garda terdepan dalam memerangi krisis iklim.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="content-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2>Apa yang GreenWave Lakukan</h2>
+        <p>
+          GreenWave berkomitmen untuk melindungi lingkungan melalui aksi nyata dan advokasi, termasuk di wilayah perkotaan. Mimpi besar kota yang berkelanjutan kami lakukan lewat gugatan polusi udara Jakarta yang telah memutuskan bahwa pemerintah pusat dan daerah bertanggung jawab atas udara kotor di Jakarta, serta riset Transformasi Transportasi Jakarta dan riset Keadilan Iklim untuk Jakarta Berketahanan yang bisa menjadi acuan perubahan kebijakan.
+        </p>
+        <p>
+            Bergabunglah dengan kami untuk mewujudkan perubahan positif di perkotaan.
+        </p>
+        <a href="#" class="btn-outline-dark-green mt-3">
+          Hijaukan Kota, Sehatkan Hidup!
+        </a>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="../asset/image/aksi-greenwave.jpg" alt="Aksi GreenWave" class="img-fluid rounded shadow-sm">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="campaign-links-section py-5" style="background-color: #e9ecef;">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="mb-5">Pelajari Kampanye Perkotaan Lebih Lanjut</h2>
+      </div>
+    </div>
+
+    <div class="row text-center justify-content-center">
+      
+      <div class="col-lg-4 col-md-6 mb-4 campaign-item">
+        <img src="../asset/image/polusi-udara-icon.jpg" alt="Polusi Udara" class="img-fluid">
+        <a href="#" class="campaign-link-underline">Polusi Udara ></a>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 mb-4 campaign-item">
+        <img src="../asset/image/kota-adil-iklim.jpg" alt="Kota Berkeadilan Iklim" class="img-fluid">
+        <a href="#" class="campaign-link-underline">Kota Berkeadilan Iklim ></a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4 campaign-item">
+        <img src="../asset/image/plastik-sekali-pakai.jpg" alt="Plastik Sekali Pakai" class="img-fluid">
+        <a href="#" class="campaign-link-underline">Plastik Sekali Pakai ></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="latest-news-section py-5">
+  <div class="container">
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="section-title">Kabar Terbaru Kampanye</h2>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="d-md-flex news-item">
+          <div class="news-image-container flex-shrink-0 mb-3 mb-md-0">
+            <img src="../asset/image/penilaian-kinerja-img.jpg" alt="Penilaian Kinerja" class="news-image">
+          </div>
+          <div class="news-content-container flex-grow-1 ms-md-4">
+            <p class="news-category">Artikel</p>
+            <h3 class="news-title">
+              <a href="#">Masyarakat Sipil Sambangi Balai Kota Jakarta, Berikan Penilaian Kinerja 100 Hari Pram-Doel</a>
+            </h3>
+            <p class="news-excerpt">
+              Jakarta, 2 Juni 2025 – Perwakilan masyarakat sipil yang terdiri dari Greenwave Indonesia bersama Urban Poor Consortium (UPC), Lembaga Bantuan Hukum Jakarta (LBH Jakarta) dan Jaringan Rakyat Miskin Kota (JRMK)…
+            </p>
+            <p class="news-meta">Fauziyah Salehah</p>
+            <p class="news-meta">2 Juni 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="my-4">
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="d-md-flex news-item">
+          <div class="news-image-container flex-shrink-0 mb-3 mb-md-0">
+            <img src="../asset/image/jakarta-masih-gelap-img.jpg" alt="jakarta gelap" class="news-image">
+          </div>
+          <div class="news-content-container flex-grow-1 ms-md-4">
+            <p class="news-category">Perkotaan</p>
+            <h3 class="news-title">
+              <a href="#">100 Hari Pram-Doel Pimpin Ibu Kota: Jakarta Masih Gelap, Janji “Jakarta Menyala” Terjebak Pola Lama </a>
+            </h3>
+            <p class="news-excerpt">
+              Jakarta, 2 Juni 2025 — Seratus hari Pramono Anung dan Rano Karno memimpin Jakarta, namun program awal mereka dalam Instruksi Gubernur Nomor e-0001 Tahun 2025 belum menyelesaikan masalah mendasar warga.…
+            </p>
+            <p class="news-meta">GreenWave Indonesia</p>
+            <p class="news-meta">2 Juni 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="d-md-flex news-item">
+          <div class="news-image-container flex-shrink-0 mb-3 mb-md-0">
+            <img src="../asset/image/banjir-jabodetabek.jpg" alt="Banjir Jabodetabek" class="news-image">
+          </div>
+          <div class="news-content-container flex-grow-1 ms-md-4">
+            <p class="news-category">Hutan</p>
+            <h3 class="news-title">
+              <a href="#">Banjir Jabodetabek Bukti Nyata Rentannya Indonesia dalam Ancaman Krisis Iklim</a>
+            </h3>
+            <p class="news-excerpt">
+              Perubahan fungsi lahan yang serampangan serta lambatnya respon pemerintah daerah atas peringatan dini cuaca ekstrem menjadi penyebab utama bencana banjir yang merendam wilayah Jakarta, Bogor, Depok, Tangerang, dan Bekasi (Jabodetabek) yang beberapa hari ini berdampak luas pada masyarakat. 
+            </p>
+            <p class="news-meta">GreenWave Indonesia</p>
+            <p class="news-meta">6 Maret 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <a href="#" class="see-all-link">
+          See all stories >
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACTION / DONATE CTA  -->
+ <section id="act" class="py-5"> <div class="container">
+    
+    <div class="text-start mb-4"> 
+        <h2 style="font-weight: 700; font-size: 2.5rem; color: #fff;">Bersama kita bisa membuat perubahan.</h2>
+        <p style="font-weight: 600; font-size: 1.25rem; color: #fff;">Bergabung sekarang untuk mendapatkan informasi terbaru seputar kampanye lingkungan.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <form id="actSubscribeForm" action="#" method="POST">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="actEmail" class="form-label">Email*</label>
+              <input type="email" class="form-control form-control-lg form-control-cta" id="actEmail" required>
+            </div>
+            <div class="col-md-4">
+              <label for="actFirstName" class="form-label">Nama Depan</label>
+              <input type="text" class="form-control form-control-lg form-control-cta" id="actFirstName">
+            </div>
+            <div class="col-md-4">
+              <label for="actLastName" class="form-label">Nama Belakang</label>
+              <input type="text" class="form-control form-control-lg form-control-cta" id="actLastName">
+            </div>
+          </div>
+
+          <div class="form-text disclaimer-text mt-4">
+            GreenWave memerlukan informasi kontak yang Anda berikan kepada kami untuk menghubungi Anda tentang produk dan layanan kami. Anda dapat berhenti berlangganan dari komunikasi ini kapan pun. Untuk informasi tentang cara berhenti berlangganan, serta praktik privasi dan komitmen kami untuk melindungi privasi Anda, tinjau Kebijakan Privasi kami.
+          </div>
+
+          <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center mt-4 gap-4">
+            
+            
+            <button type="submit" class="btn btn-lg fw-bold px-5 py-3 cta-submit-btn">
+              BERGABUNG SEKARANG
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="back-link-section">
+  <div class="container">
+    <a href="../fokus-kerja.html" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left back-link-icon" 
+           width="24" height="24" viewBox="0 0 24 24" 
+           stroke-width="3" stroke="currentColor" fill="none" 
+           stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 12l14 0" />
+        <path d="M5 12l6 6" />
+        <path d="M5 12l6 -6" />
+      </svg>
+      Fokus Kerja
+    </a>
+  </div>
+</section>
+
+<!-- === FOOTER === -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="country-selector mb-3">
+      <a href="#" class="footer-link">
+        <i class="fas fa-globe"></i> GreenWave <i class="fas fa-chevron-down small"></i>
+      </a>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row pt-4">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Kontak</a></li>
+          <li><a href="#">Bekerja di GreenWave</a></li>
+          <li><a href="#">Pers</a></li>
+          <li><a href="#">Supporter Care</a></li>
+          <li><a href="#">Peta Situs</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Hak Cipta</a></li>
+          <li><a href="#">Ketentuan</a></li>
+          <li><a href="#">Kebijakan Komunitas</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Arsip</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Follow us</h6>
+        <ul class="list-unstyled social-icons d-flex gap-3">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright-bar text-center py-3">
+  <p class="mb-0 small">
+    © GreenWave 2025 | Kecuali dinyatakan sebaliknya, salinan situs web dilisensikan dengan 
+    <a href="#" class="copyright-link">Lisensi Internasional CC-BY</a>
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenWave - Makes Life Better !</title>
+
+  <link rel="icon" href="asset/image/logo-mini-16x16.png" type="image/png">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <i class="fas fa-bars fs-4 text-dark"></i>
+    </button>
+
+    <a class="navbar-brand mx-auto" href="#">
+      <img src="asset/image/logo-rev-copy.png" alt="GreenWave Logo" class="logo-main d-none d-lg-block">
+      
+      <img src="asset/image/logo-rev-mobile.png" alt="GreenWave Logo" class="logo-mobile d-lg-none">
+    </a>
+    
+
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start mt-3 mt-lg-0">
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="tentang-kami.html" role="button">Tentang Kami</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-1/tim-kami.html">Tim Kami</a></li>
+            <li><a class="dropdown-item" href="sub-menu-1/laporan-tahunan.html">Laporan Tahunan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-1/pekerjaan.html">Pekerjaan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-1/faq.html">Pertanyaan Umum</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="fokus-kerja.html" role="button">Fokus Kerja</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-2/hutan.html">Hutan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/iklim-energi.html">Iklim & Energi</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/laut.html">Laut</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/kota.html">Perkotaan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/masa-depan.html">Masa Depan Alternatif</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="kabar-terbaru.html" role="button">Kabar Terbaru</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-3/siaran-pers.html">Siaran Pers</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/cerita.html">Cerita</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/riset.html">Riset</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/kemenangan.html">Kemenangan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/siniar.html">Siniar</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="mari-beraksi.html" role="button">Mari Beraksi</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-4/bergabung-relawan.html">Bergabung Relawan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-4/petisi.html">Petisi</a></li>
+            <li><a class="dropdown-item" href="sub-menu-4/magang.html">Magang</a></li>
+            <li><a class="dropdown-item" href="sub-menu-4/berlangganan-informasi.html">Berlangganan Informasi</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a href="donasi.html" class="btn btn-donasi">Donasi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-sub-nav d-lg-none">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="fokus-kerja.html">Fokus Kerja</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="kabar-terbaru.html">Kabar Terbaru</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mari-beraksi.html">Mari Beraksi</a> </li>
+    </ul>
+</div>
+
+<!-- OFF Canvas Mobile Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  
+  <div class="offcanvas-header">
+    <a href="#">
+        <img src="asset/image/logo-mini.png" alt="GreenWave Logo" class="logo-mobile-offcanvas">
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body d-flex flex-column p-0">
+    
+    <div class="accordion accordion-flush mobile-nav-accordion" id="mobileMenuAccordion">
+      
+      <div class="mobile-nav-item">
+        <a href="index.html" class="nav-link-top">Home</a>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingOne">
+          <a href="tentang-kami.html" class="nav-link-split">
+            Tentang Kami
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-1/tim-kami.html" class="dropdown-item">Tim Kami</a>
+            <a href="sub-menu-1/laporan-tahunan.html" class="dropdown-item">Laporan Tahunan</a>
+            <a href="sub-menu-1/pekerjaan.html" class="dropdown-item">Pekerjaan</a>
+            <a href="sub-menu-1/faq.html" class="dropdown-item">Pertanyaan Umum</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingTwo">
+          <a href="fokus-kerja.html" class="nav-link-split">
+            Fokus Kerja
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-2/hutan.html" class="dropdown-item">Hutan</a>
+            <a href="sub-menu-2/iklim.html" class="dropdown-item">Iklim & Energi</a>
+            <a href="sub-menu-2/laut.html" class="dropdown-item">Laut</a>
+            <a href="sub-menu-2/kota.html" class="dropdown-item">Perkotaan</a>
+            <a href="sub-menu-2/masa-depan.html" class="dropdown-item">Masa Depan Alternatif</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingThree">
+          <a href="kabar-terbaru.html" class="nav-link-split">
+            Kabar Terbaru
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-3/siaran-pers.html" class="dropdown-item">Siaran Pers</a>
+            <a href="sub-menu-3/cerita.html" class="dropdown-item">Cerita</a>
+            <a href="sub-menu-3/riset.html" class="dropdown-item">Riset</a>
+            <a href="sub-menu-3/kemenangan.html" class="dropdown-item">Kemenangan</a>
+            <a href="sub-menu-3/siniar.html" class="dropdown-item">Siniar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingFour">
+          <a href="mari-beraksi.html" class="nav-link-split">
+            Mari Beraksi
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-4/bergabung-relawan.html" class="dropdown-item">Bergabung Relawan</a>
+            <a href="sub-menu-4/petisi.html" class="dropdown-item">Petisi</a>
+            <a href="sub-menu-4/magang.html" class="dropdown-item">Magang</a>
+            <a href="sub-menu-4/berlangganan-informasi.html" class="dropdown-item">Berlangganan Informasi</a>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+    <div class="mt-auto p-3">
+      <a href="donasi.html" class="btn btn-donasi w-100">
+          Donasi
+      </a>
+    </div>
+    
+  </div> </div>
+
+
+ <header class="hero">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="hero-slide" style="background-image: url('asset/image/hero-img-1.jpeg')">
+            <div class="container h-100 d-flex align-items-end">
+              <div class="hero-caption text-white pb-5">
+                <h1>Satu Suara Pemuda Adat untuk Para Pemimpin Dunia</h1>
+                <p class="lead">Pemuda Adat dari 7 wilayah adat Papua serta perwakilan Masyarakat Adat dari Cekungan Kongo, Amazon dan Borneo melahirkan Deklarasi Sira, sebuah pesan untuk Para Pemimpin Dunia.</p>
+                <a href="404.html" class="btn btn-light btn-lg">Ikut Beraksi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('asset/image/hero-img-2.jpeg')">
+            <div class="container h-100 d-flex align-items-end">
+              <div class="hero-caption text-white pb-5">
+                <h1>Save Raja Ampat !</h1>
+                <p class="lead">Hilirisasi Nikel di berbagai daerah telah membawa derita, kini tambang Nikel juga mengancam Raja Ampat. Jangan biarkan tambang Nikel menghancurkan keanekaragaman hayati dan merusak laut sumber kehidupan masyarakat.</p>
+                <a href="404.html" class="btn btn-light btn-lg">Pelajari Lebih Lanjut</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('asset/image/hero-img-3.jpeg')">
+            <div class="container h-100 d-flex align-items-end">
+              <div class="hero-caption text-white pb-5">
+                <h1>Waktu untuk Melawan! #TimeToResist</h1>
+                <p class="lead">Oligarki dan korporasi tengah berusaha mengambil kendali atas hak-hak kita, mereka menggunakan kekayaan untuk melobi dan melemahkan peraturan yang melindungi manusia dan planet ini. Namun, mereka salah meremehkan kita sebagai rakyat untuk melawan.</p>
+                <a href="404.html" class="btn btn-light btn-lg">Tanda Tangan Petisi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+        <button id="carouselPlayPauseDesktop" class="btn-play-pause d-none d-lg-block ms-3" aria-label="Pause carousel">
+            <i class="fas fa-pause"></i>
+        </button>
+
+        <button id="carouselPlayPauseMobile" class="btn-play-pause d-lg-none ms-2" aria-label="Pause carousel">
+            <i class="fas fa-pause"></i>
+        </button>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+
+      
+    </div>
+  </header>
+
+  <!-- ABOUT / INTRO -->
+  <section id="about" class="py-5 text-center bg-light-gray">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Membangun Masa Depan Bersama</h2>
+      <p class="mb-5">
+      Bayangkan sebuah dunia dimana hutan tumbuh berkembang dan lautan penuh dengan kehidupan. 
+      Dunia dimana energi bersih tersedia secara adil dan merata. 
+      Setiap orang, di desa maupun di kota bisa mendapatkan hidup layak, aman dan bahagia. 
+      Kita tidak dapat membangun masa depan ini sendiri, tapi kita bisa membangunnya bersama.
+      </p>
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center mt-5">
+    
+      <div class="col mb-4">
+        <a href="sub-menu-2/hutan.html" class="campaign-link-item">
+          <img src="asset/image/hutan-img.jpg" alt="Hutan" class="campaign-link-image">
+          <h5 class="campaign-link-title">Hutan &gt;</h5>
+        </a>
+      </div>
+
+      <div class="col mb-4">
+        <a href="sub-menu-2/iklim-energi.html" class="campaign-link-item">
+          <img src="asset/image/img-iklim-riset-1.jpg" alt="Iklim & Energi" class="campaign-link-image">
+          <h5 class="campaign-link-title">Iklim & Energi &gt;</h5>
+        </a>
+      </div>
+
+      <div class="col mb-4">
+        <a href="sub-menu-2/laut.html" class="campaign-link-item">
+          <img src="asset/image/laut-img-hero.jpeg" alt="Laut" class="campaign-link-image">
+          <h5 class="campaign-link-title">Laut &gt;</h5>
+        </a>
+      </div>
+
+      <div class="col mb-4">
+        <a href="sub-menu-2/kota.html" class="campaign-link-item">
+          <img src="asset/image/kota-img-faq.jpg" alt="Perkotaan" class="campaign-link-image">
+          <h5 class="campaign-link-title">Perkotaan &gt;</h5>
+        </a>
+      </div>
+
+      <div class="col mb-4">
+        <a href="sub-menu-2/masa-depan.html" class="campaign-link-item">
+          <img src="asset/image/masa-depan-alternatif.jpg" alt="Masa Depan Alternatif" class="campaign-link-image">
+          <h5 class="campaign-link-title">Masa Depan Alternatif &gt;</h5>
+        </a>
+      </div>
+
+    </div> 
+  </div> 
+</section>
+
+<section id="latest" class="py-5 bg-white">
+    <div class="container">
+        <h3 class="fw-bold mb-4">Artikel Terbaru</h3>
+
+        <div class="row mb-5 align-items-center">
+        <div class="col-md-4">
+            <img src="asset/image/penangkapan-ilegal-img.jpg" class="img-fluid rounded shadow-sm" alt="">
+        </div>
+        <div class="col-md-8">
+            <p class="text-success fw-semibold mb-1"><span class="article-category">Kabar dan Cerita</span> • <span class="text-muted article-hashtag">#Laut</span></p>
+            <h4 class="fw-bold">Wajah Kelam Perikanan: Laut Indonesia Rutin Dirampok, ABK-nya Diperbudak Kapal Asing</h4>
+            <p class="text-muted">Dua kapal asing memasuki laut Indonesia, mencuri hampir 200 ton ikan, dan memperbudak nelayan kita. Enam ABK asal Indonesia nekat melompat ke laut untuk kabur, tapi satu di antaranya ditemukan tanpa kepala.</p>
+            <p class="small text-muted mb-0">Greenwave Indonesia • 17 Oktober 2025</p>
+        </div>
+        </div>
+
+        <div class="row mb-5 align-items-center">
+        <div class="col-md-4">
+            <img src="asset/image/energi-img.jpg" class="img-fluid rounded shadow-sm" alt="">
+        </div>
+        <div class="col-md-8">
+            <p class="text-success fw-semibold mb-1"><span class="article-category">Iklim dan Energi</span> • <span class="text-muted article-hashtag">#EnergiTerbarukan</span></p>
+            <h4 class="fw-bold">Gagap Urus Radiasi Radioaktif, Masih Mimpi Bangun PLTN?</h4>
+            <p class="text-muted">Greenwave Indonesia mendesak pemerintah melakukan evaluasi menyeluruh terhadap pengawasan limbah radioaktif. Transparansi dan edukasi masyarakat penting untuk keselamatan publik.</p>
+            <p class="small text-muted mb-0">Greenwave Indonesia • 13 Oktober 2025</p>
+        </div>
+        </div>
+
+        <div class="row mb-4 align-items-center">
+        <div class="col-md-4">
+            <img src="asset/image/max-binur.jpg" class="img-fluid rounded shadow-sm" alt="">
+        </div>
+        <div class="col-md-8">
+            <p class="text-success fw-semibold mb-1"><span class="article-category">Artikel</span> • <span class="text-muted article-hashtag">#Hutan</span></p>
+            <h4 class="fw-bold">In Memory of: Markus ‘Max’ Binur</h4>
+            <p class="text-muted">Mengenang perjuangan Markus ‘Max’ Binur — seniman dan aktivis Papua yang memperjuangkan keadilan lingkungan dan sosial melalui karya dan suara.</p>
+            <p class="small text-muted mb-0">Greenwave Indonesia • 10 Oktober 2025</p>
+        </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="404.html" class="btn btn-outline-success px-4 py-2 rounded-pill">Selengkapnya</a>
+        </div>
+    </div>
+</section>
+
+    <!-- DONATION CAMPAIGN SECTION -->
+    <section id="donation-campaign" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold mb-5 text-center">Dukung Kampanye Dengan Berdonasi</h2>
+
+            <div class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                <img src="asset/image/Kampaney-1.png" class="card-img-top" alt="E-Course Lingkungan">
+                <div class="card-body d-flex flex-column">
+                    <p class="text-muted fw-semibold mb-1">Lindungi</p>
+                    <h4 class="fw-bold">Dapatkan E-Course Lingkungan</h4>
+                    <p>Pelajari isu-isu lingkungan yang disusun oleh juru kampanye Greenwave. Daftar menjadi donor bulanan dan dapatkan akses e-course langsung ke WhatsApp Anda.</p>
+                    <a href="404.html" class="btn fw-semibold px-4 mt-auto btn-campaign">Ikut Beraksi</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                <img src="asset/image/kampanye-2.jpg" class="card-img-top" alt="Bantu Tim Cegah Api">
+                <div class="card-body d-flex flex-column">
+                    <p class="text-muted fw-semibold mb-1">Lindungi</p>
+                    <h4 class="fw-bold">Bantu Tim Cegah Api Padamkan Api!</h4>
+                    <p>Ambil aksi dan ikut dalam misi patungan mengumpulkan dana untuk membeli peralatan kerja bagi Tim Cegah Api Sumatera.</p>
+                    <a href="404.html" class="btn fw-semibold px-4 mt-auto btn-campaign">Ikut Beraksi</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOGETHER SECTION -->
+    <section id="together" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h3 class="fw-bold mb-3">Membangun Kekuatan Bersama</h3>
+                <p class="lead mb-4">
+                Jika kamu ingin dunia yang lebih hijau dan adil, kami akan berdiri berjalan bersamamu.
+                Jika kamu memiliki ide menuju kesana, kami ingin belajar darimu. 
+                Mari bermimpi bersama, merencanakan bersama, dan beraksi bersama. 
+                Bersama, kita bisa mengungkap persoalan lingkungan, mendesak pemerintah dan korporasi bertanggung jawab, serta mendorong solusi keberlanjutan 
+                yang ditopang ilmu pengetahuan dan kearifan lokal yang selaras dengan alam.
+                </p>
+
+                <div id="togetherCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+                <div class="carousel-inner rounded shadow-sm">
+                    <div class="carousel-item active">
+                    <img src="asset/image/together-section-1.jpg" 
+                        class="d-block w-100 rounded" alt="Tim cegah api Greenwave memadamkan api di lahan gambut">
+                        <p class="text-muted small" style="text-align: center;">
+                        Tim cegah api Greenwave memadamkan api di lahan gambut wilayah Desa Punggur Kecil, Kec. Sungai Kakap, Kab. Kubu Raya, Kalimantan Barat. 
+                        Tim Cegah Api ditugaskan di area lahan gambut untuk mencegah api meluas dan melakukan investigasi.
+                        © Rendra Hernawan
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="asset/image/together-section-2.jpg" 
+                        class="d-block w-100 rounded" alt="Aksi Greenwave di hutan tropis Indonesia">
+                        <p class="text-muted small" style="text-align: center;">
+                        Tim cegah api Greenwave memadamkan api di lahan gambut wilayah Desa Punggur Kecil, Kec. Sungai Kakap, Kab. Kubu Raya, Kalimantan Barat. 
+                        Tim Cegah Api ditugaskan di area lahan gambut untuk mencegah api meluas dan melakukan investigasi.
+                        © Rendra Hernawan
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="asset/image/cerita-hero.jpg" 
+                        class="d-block w-100 rounded" alt="Aksi Greenwave di hutan tropis Indonesia">
+                        <p class="text-muted small" style="text-align: center;">
+                        Greenwave Indonesia installs The 'Oligarchy Monster' octopus that occupied the HI Roundabout pool Jakarta. With its tentacles, the 'Oligarchy Monster' grabbed three mannequins that resemble political figures who want to run as presidential candidates in the 2024 elections. Greenwave Indonesia invites the public to be wary of oligarchs sneaking behind candidates, and to jointly call for elections without oligarchy and choose the earth and not the oligarchy. Activists also urge the presidential and vice presidential candidates to have a serious and concrete...
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="asset/image/together-section-2.jpg" 
+                        class="d-block w-100 rounded" alt="Aksi Greenwave di hutan tropis Indonesia">
+                        <p class="text-muted small" style="text-align: center;">
+                        Tim cegah api Greenwave memadamkan api di lahan gambut wilayah Desa Punggur Kecil, Kec. Sungai Kakap, Kab. Kubu Raya, Kalimantan Barat. 
+                        Tim Cegah Api ditugaskan di area lahan gambut untuk mencegah api meluas dan melakukan investigasi.
+                        © Rendra Hernawan
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tombol navigasi -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#togetherCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#togetherCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+                </div>
+
+                
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ACTION / DONATE CTA  -->
+ <section id="act" class="py-5"> <div class="container">
+    
+    <div class="text-start mb-4"> 
+        <h2 style="font-weight: 700; font-size: 2.5rem; color: #fff;">Bersama kita bisa membuat perubahan.</h2>
+        <p style="font-weight: 600; font-size: 1.25rem; color: #fff;">Bergabung sekarang untuk mendapatkan informasi terbaru seputar kampanye lingkungan.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <form id="actSubscribeForm" action="#" method="POST">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="actEmail" class="form-label">Email*</label>
+              <input type="email" class="form-control form-control-lg form-control-cta" id="actEmail" required>
+            </div>
+            <div class="col-md-4">
+              <label for="actFirstName" class="form-label">Nama Depan</label>
+              <input type="text" class="form-control form-control-lg form-control-cta" id="actFirstName">
+            </div>
+            <div class="col-md-4">
+              <label for="actLastName" class="form-label">Nama Belakang</label>
+              <input type="text" class="form-control form-control-lg form-control-cta" id="actLastName">
+            </div>
+          </div>
+
+          <div class="form-text disclaimer-text mt-4">
+            GreenWave memerlukan informasi kontak yang Anda berikan kepada kami untuk menghubungi Anda tentang produk dan layanan kami. Anda dapat berhenti berlangganan dari komunikasi ini kapan pun. Untuk informasi tentang cara berhenti berlangganan, serta praktik privasi dan komitmen kami untuk melindungi privasi Anda, tinjau Kebijakan Privasi kami.
+          </div>
+
+          <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center mt-4 gap-4">
+            
+            
+            <button type="submit" class="btn btn-lg fw-bold px-5 py-3 cta-submit-btn">
+              BERGABUNG SEKARANG
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer  -->
+  <footer class="site-footer">
+  <div class="container">
+    
+    <div class="country-selector mb-3">
+      <a href="#" class="footer-link">
+        <i class="fas fa-globe"></i> GreenWave <i class="fas fa-chevron-down small"></i>
+      </a>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row pt-4">
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Kontak</a></li>
+          <li><a href="#">Bekerja di GreenWave</a></li>
+          <li><a href="#">Pers</a></li>
+          <li><a href="#">Supporter Care</a></li>
+          <li><a href="#">Peta Situs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Hak Cipta</a></li>
+          <li><a href="#">Ketentuan</a></li>
+          <li><a href="#">Kebijakan Komunitas</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Arsip</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Follow us</h6>
+        <ul class="list-unstyled social-icons d-flex gap-3">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li> <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright-bar">
+  <div class="container text-center">
+    <p class="mb-0 small">
+      © GreenWave 2025 | Kecuali dinyatakan sebaliknya, salinan situs web dilisensikan dengan 
+      <a href="#" class="copyright-link">Lisensi Internasional CC-BY</a>
+    </p>
+  </div>
+</div>
+
+  <!-- DONATE MODAL -->
+  <div class="modal fade" id="donateModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Donasi untuk Kampanye</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Pilih nominal donasi bulanan atau sekali:</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-outline-success donate-btn">Rp25.000</button>
+            <button class="btn btn-outline-success donate-btn">Rp50.000</button>
+            <button class="btn btn-outline-success donate-btn">Rp100.000</button>
+            <button class="btn btn-outline-success donate-btn">Rp250.000</button>
+          </div>
+          <hr>
+          <div id="donationResult" class="small text-muted"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button id="confirmDonate" class="btn btn-success">Lanjut Bayar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (bundle includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>

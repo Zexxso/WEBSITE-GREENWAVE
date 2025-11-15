@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenWave - Makes Life Better!</title>
+
+  <link rel="icon" href="../asset/image/logo-mini-16x16.png" type="image/png">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top scrolled">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <i class="fas fa-bars fs-4 text-dark"></i>
+    </button>
+
+    <a class="navbar-brand mx-auto" href="../index.html">
+      <img src="../asset/image/logo-rev-copy.png" alt="GreenWave Logo" class="logo-main">
+    </a>
+
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start mt-3 mt-lg-0">
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../tentang-kami.html" role="button">Tentang Kami</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-1/tim-kami.html">Tim Kami</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/laporan-tahunan.html">Laporan Tahunan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/pekerjaan.html">Pekerjaan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/faq.html">Pertanyaan Umum</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../fokus-kerja.html" role="button">Fokus Kerja</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-2/hutan.html">Hutan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/iklim.html">Iklim & Energi</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/laut.html">Laut</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/kota.html">Perkotaan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/masa-depan.html">Masa Depan Alternatif</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../kabar-terbaru.html" role="button">Kabar Terbaru</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-3/siaran-pers.html">Siaran Pers</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/cerita.html">Cerita</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/riset.html">Riset</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/kemenangan.html">Kemenangan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-3/siniar.html">Siniar</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../mari-beraksi.html" role="button">Mari Beraksi</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="bergabung-relawan.html">Bergabung Relawan</a></li>
+            <li><a class="dropdown-item" href="petisi.html">Petisi</a></li>
+            <li><a class="dropdown-item" href="magang.html">Magang</a></li>
+            <li><a class="dropdown-item" href="berlangganan-informasi.html">Berlangganan Informasi</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a href="../donasi.html" class="btn btn-donasi">Donasi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-sub-nav d-lg-none">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="../tentang-kami.html">Tentang Kami</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../fokus-kerja.html">Fokus Kerja</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../kabar-terbaru.html">Kabar Terbaru</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../mari-beraksi.html">Mari Beraksi</a> </li>
+    </ul>
+</div>
+
+<!-- OFF Canvas Mobile Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  
+  <div class="offcanvas-header">
+    <a href="#">
+        <img src="../asset/image/logo-mini.png" alt="GreenWave Logo" class="logo-mobile-offcanvas">
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body d-flex flex-column p-0">
+    
+    <div class="accordion accordion-flush mobile-nav-accordion" id="mobileMenuAccordion">
+      
+      <div class="mobile-nav-item">
+        <a href="../index.html" class="nav-link-top">Home</a>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingOne">
+          <a href="../tentang-kami.html" class="nav-link-split">
+            Tentang Kami
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-1/tim-kami.html" class="dropdown-item">Tim Kami</a>
+            <a href="../sub-menu-1/laporan-tahunan.html" class="dropdown-item">Laporan Tahunan</a>
+            <a href="../sub-menu-1/pekerjaan.html" class="dropdown-item">Pekerjaan</a>
+            <a href="../sub-menu-1/faq.html" class="dropdown-item">Pertanyaan Umum</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingTwo">
+          <a href="../fokus-kerja.html" class="nav-link-split">
+            Fokus Kerja
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-2/hutan.html" class="dropdown-item">Hutan</a>
+            <a href="../sub-menu-2/iklim-energi.html" class="dropdown-item">Iklim & Energi</a>
+            <a href="../sub-menu-2/laut.html" class="dropdown-item">Laut</a>
+            <a href="../sub-menu-2/kota.html" class="dropdown-item">Perkotaan</a>
+            <a href="../sub-menu-2/masa-depan.html" class="dropdown-item">Masa Depan Alternatif</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingThree">
+          <a href="../kabar-terbaru.html" class="nav-link-split">
+            Kabar Terbaru
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-3/siaran-pers.html" class="dropdown-item">Siaran Pers</a>
+            <a href="../sub-menu-3/cerita.html" class="dropdown-item">Cerita</a>
+            <a href="../sub-menu-3/riset.html" class="dropdown-item">Riset</a>
+            <a href="../sub-menu-3/kemenangan.html" class="dropdown-item">Kemenangan</a>
+            <a href="../sub-menu-3/siniar.html" class="dropdown-item">Siniar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingFour">
+          <a href="../mari-beraksi.html" class="nav-link-split">
+            Mari Beraksi
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="bergabung-relawan.html" class="dropdown-item">Bergabung Relawan</a>
+            <a href="petisi.html" class="dropdown-item">Petisi</a>
+            <a href="magang.html" class="dropdown-item">Magang</a>
+            <a href="berlangganan-informasi.html" class="dropdown-item">Berlangganan Informasi</a>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+    <div class="mt-auto p-3">
+      <a href="../donasi.html" class="btn btn-donasi w-100">
+          Donasi
+      </a>
+    </div>
+    
+  </div> </div>
+
+<section class="join-us-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+        <div class="col-lg-6 join-text-content">
+            <h1>
+                <span class="highlight-bg">Magang di GreenWave</span>
+            </h1>
+            <p>
+                Kamu tertarik untuk mengetahui lebih dalam cara kerja organisasi kampanye di bidang lingkungan? Greenwave membuka kesempatan magang bagi mahasiswa yang ingin berkontribusi langsung terhadap pelindungan lingkungan.
+            </p>
+            <a href="#daftar-sekarang" class="btn btn-report mt-3">
+              Daftar Sekarang
+            </a>
+            
+            </div>
+
+        <div class="col-lg-6 join-image-content">
+            <img src="../asset/image/magang-hero.jpg" alt="Magang" class="join-image img-fluid">
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="stats-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="stat-icon mb-3">
+          <i class="fas fa-user-graduate fa-3x"></i>
+        </div>
+        <h2 class="stat-number">72</h2>
+        <p class="stat-text">
+          alumni magang yang merupakan mahasiswa dari PTN & PTS
+        </p>
+      </div>
+
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="stat-icon mb-3">
+          <i class="fas fa-university fa-3x"></i>
+        </div>
+        <h2 class="stat-number">18</h2>
+        <p class="stat-text">
+          kampus yang tersebar di seluruh Indonesia
+        </p>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="stat-icon mb-3">
+          <i class="fas fa-briefcase fa-3x"></i>
+        </div>
+        <h2 class="stat-number">>10</h2>
+        <p class="stat-text">
+          posisi magang dibuka setiap batch
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="program-magang-section py-5">
+  <div class="container">
+    
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10">
+        
+        <h2 class="magang-main-title">Program Magang GreenWave Indonesia</h2>
+        <p class="magang-text">
+          Program magang ini dibuat untuk mahasiswa aktif tingkat sarjana atau pascasarjana yang mencari pengalaman nyata di dunia kerja non-profit. Dalam program 4-6 bulan, pemagang akan mendapatkan kesempatan untuk terlibat dalam program-program Greenwave Indonesia bersama dukungan mentor dan jaringan yang luas.
+        </p>
+
+        <h5 class="magang-subtitle">Syarat umum:</h5>
+        <ul class="magang-list">
+          <li>Mahasiswa S1 aktif (minimal semester 5) atau mahasiswa pascasarjana yang berusia minimal 18 tahun pada tanggal tenggat akhir lamaran;</li>
+          <li>Berkomitmen untuk menyelesaikan program magang dalam waktu yang ditentukan;</li>
+          <li>Secara umum seluruh posisi magang ini terbuka untuk semua mahasiswa dari berbagai jurusan/program studi, meskipun untuk beberapa posisi terdapat jurusan/program studi yang lebih diutamakan.</li>
+        </ul>
+
+        <h5 class="magang-subtitle">Apa yang akan kamu dapatkan jika mengikuti program magang?</h5>
+        <ul class="magang-list">
+          <li>Sertifikat magang;</li>
+          <li>Pengalaman kerja di organisasi nob-profit dengan lingkungan multikultural dan inklusif;</li>
+          <li>Kesempatan kerja dengan individu-individu kreatif;</li>
+          <li>Tunjangan (Rp 120,000/hari) yang dibayarkan setiap bulan selama magang berlangsung.</li>
+        </ul>
+        
+      </div>
+    </div> <div class="row">
+      <div class="col-12">
+        <h2 class="section-title mb-4">Aktivitas Magang di GreenWave Indonesia</h2>
+      </div>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <img src="../asset/image/magang-galery-1.jpg" alt="Aktivitas Magang 1" class="img-fluid rounded shadow-sm gallery-img">
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img src="../asset/image/magang-galery-2.jpg" alt="Aktivitas Magang 2" class="img-fluid rounded shadow-sm gallery-img">
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img src="../asset/image/magang-galery-3.webp" alt="Aktivitas Magang 3" class="img-fluid rounded shadow-sm gallery-img">
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img src="../asset/image/magang-galery-4.jpg" alt="Aktivitas Magang 4" class="img-fluid rounded shadow-sm gallery-img">
+      </div>
+    </div> </div>
+</section>
+
+<section class="testimonial-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="section-title">Kata Mereka Tentang Magang di GreenWave</h2>
+      </div>
+    </div>
+    
+    <div id="testimonialCarousel" class="carousel slide testimonial-slider-simple" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <img src="../asset/image/alumni-magang-1.webp" class="d-block w-100" alt="Testimoni Fina">
+        </div>
+
+        <div class="carousel-item">
+          <img src="../asset/image/alumni-magang-2.webp" class="d-block w-100" alt="Testimoni Joonathan">
+        </div>
+
+        <div class="carousel-item">
+          <img src="../asset/image/alumni-magang-3.webp" class="d-block w-100" alt="Testimoni Kori">
+        </div>
+
+        <div class="carousel-item">
+          <img src="../asset/image/alumni-magang-4.webp" class="d-block w-100" alt="Testimoni Kori">
+        </div>
+
+      </div>
+      
+      <button class="carousel-control-prev testimonial-control" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next testimonial-control" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      
+    </div> </div>
+</section>
+
+<section class="magang-banner-section text-center" id="daftar-sekarang">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="magang-banner-icon">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <h1 class="magang-banner-title">
+          Program Magang Greenwave Indonesia – Batch 7
+        </h1>
+        <a href="404.html" class="btn btn-report btn-sm" style="font-weight: 700;">
+          Pendaftaran Ditutup
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dukung-kampanye-section py-5">
+  <div class="container">
+    
+    <div class="row g-4">
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="campaign-grid-card">
+          <a href="#"><img src="../asset/image/magang-rekrut.jpg" alt="Rekrutmen Batch 4" class="campaign-grid-img"></a>
+          <div class="campaign-grid-content">
+            <p class="campaign-grid-category">Gabung</p>
+            <h5 class="campaign-grid-title"><a href="#">Rekrutmen Mahasiswa Magang Batch #4</a></h5>
+            <p class="campaign-grid-excerpt">
+              Program magang Greenwave Indonesia ditujukan untuk mahasiswa aktif baik S1 maupun S2.
+            </p>
+            <a href="404.html" class="btn btn-report btn-sm mt-auto">Ikut Beraksi</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="campaign-grid-card">
+          <a href="#"><img src="../asset/image/magang-rekrut.jpg" alt="Rekrutmen Batch 5" class="campaign-grid-img"></a>
+          <div class="campaign-grid-content">
+            <p class="campaign-grid-category">Gabung</p>
+            <h5 class="campaign-grid-title"><a href="#">Rekrutmen Mahasiswa Magang Batch #5</a></h5>
+            <p class="campaign-grid-excerpt">
+              Program magang Greenwave Indonesia ditujukan untuk mahasiswa aktif baik S1 maupun S2.
+            </p>
+            <a href="404.html" class="btn btn-report btn-sm mt-auto">Ikut Beraksi</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="campaign-grid-card">
+          <a href="#"><img src="../asset/image/magang-rekrut.jpg" alt="Rekrutmen Batch 6" class="campaign-grid-img"></a>
+          <div class="campaign-grid-content">
+            <p class="campaign-grid-category">Aksi</p>
+            <h5 class="campaign-grid-title"><a href="#">Rekrutmen Program Magang Batch #6</a></h5>
+            <p class="campaign-grid-excerpt">
+              Program magang Greenwave Indonesia ditujukan untuk mahasiswa aktif di tingkat sarjana ataupun pascasarjana.
+            </p>
+            <a href="404.html" class="btn btn-report btn-sm mt-auto">Ikut Beraksi</a>
+          </div>
+        </div>
+      </div>
+      
+    </div> </div>
+</section>
+
+<section class="faq-light-section py-5">
+  <div class="container">
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <div class="accordion accordion-light" id="accordionFaqMagang">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMagang1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMagang1" aria-expanded="false" aria-controls="collapseMagang1">
+                Berapa lama program magang ini berlangsung?
+              </button>
+            </h2>
+            <div id="collapseMagang1" class="accordion-collapse collapse" aria-labelledby="headingMagang1" data-bs-parent="#accordionFaqMagang">
+              <div class="accordion-body">
+                Program magang ini berlangsung selama 4-6 bulan.
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMagang2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMagang2" aria-expanded="false" aria-controls="collapseMagang2">
+                Saya sudah lulus kuliah, apakah bisa magang di Greenwave Indonesia?
+              </button>
+            </h2>
+            <div id="collapseMagang2" class="accordion-collapse collapse" aria-labelledby="headingMagang2" data-bs-parent="#accordionFaqMagang">
+              <div class="accordion-body">
+                Mohon maaf untuk saat ini kami hanya membuka pendaftaran untuk mahasiswa aktif
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMagang3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMagang3" aria-expanded="false" aria-controls="collapseMagang3">
+                Bagaimana jam kerja di Greenwave Indonesia?
+              </button>
+            </h2>
+            <div id="collapseMagang3" class="accordion-collapse collapse" aria-labelledby="headingMagang3" data-bs-parent="#accordionFaqMagang">
+              <div class="accordion-body">
+                Mahasiswa magang memiliki 3 (tiga) hari kerja wajib dan 2 (dua) hari kerja yang bersifat voluntary dalam satu minggu. Untuk hari kerja adalah kesepakatan dengan mempertimbangkan jadwal kuliah mahasiswa.
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMagang4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMagang4" aria-expanded="false" aria-controls="collapseMagang4">
+                Apakah ini paid internship? Jika ya, kapan saya akan menerima tunjangan?
+              </button>
+            </h2>
+            <div id="collapseMagang4" class="accordion-collapse collapse" aria-labelledby="headingMagang4" data-bs-parent="#accordionFaqMagang">
+              <div class="accordion-body">
+                Ya, ini adalah program paid internship. Tunjangan diterima setiap awal bulan, menghitung berapa hari kerja aktif yang telah dikerjakan dalam satu bulan.
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMagang5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMagang5" aria-expanded="false" aria-controls="collapseMagang5">
+                Apa saja kriteria utama penilaian?
+              </button>
+            </h2>
+            <div id="collapseMagang5" class="accordion-collapse collapse" aria-labelledby="headingMagang5" data-bs-parent="#accordionFaqMagang">
+              <div class="accordion-body">
+                Ada 4 kriteria: 1) kesesuaian pendidikan/jurusan; 2) pengalaman organisasi; 3) pengalaman kerja/skill yang relevan; 4) motivasi. Selain itu sertifikat (bahasa inggris atau hard skill lain) dan portofolio menambah bobot penilaian.
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMagang6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMagang6" aria-expanded="false" aria-controls="collapseMagang6">
+                Punya pertanyaan lebih lanjut?
+              </button>
+            </h2>
+            <div id="collapseMagang6" class="accordion-collapse collapse" aria-labelledby="headingMagang6" data-bs-parent="#accordionFaqMagang">
+              <div class="accordion-body">
+                <p>Jika Anda memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami.</p>
+                <a href="404.html" class="btn btn-outline-success">Tanya Magang</a>
+              </div>
+            </div>
+          </div> </div> </div> </div> </div> </section>
+
+<section class="back-link-section">
+  <div class="container">
+    <a href="../mari-beraksi.html" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left back-link-icon" 
+           width="24" height="24" viewBox="0 0 24 24" 
+           stroke-width="3" stroke="currentColor" fill="none" 
+           stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 12l14 0" />
+        <path d="M5 12l6 6" />
+        <path d="M5 12l6 -6" />
+      </svg>
+      Mari Beraksi
+    </a>
+  </div>
+</section>
+
+<!-- === FOOTER === -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="country-selector mb-3">
+      <a href="#" class="footer-link">
+        <i class="fas fa-globe"></i> GreenWave <i class="fas fa-chevron-down small"></i>
+      </a>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row pt-4">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Kontak</a></li>
+          <li><a href="#">Bekerja di GreenWave</a></li>
+          <li><a href="#">Pers</a></li>
+          <li><a href="#">Supporter Care</a></li>
+          <li><a href="#">Peta Situs</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Hak Cipta</a></li>
+          <li><a href="#">Ketentuan</a></li>
+          <li><a href="#">Kebijakan Komunitas</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Arsip</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Follow us</h6>
+        <ul class="list-unstyled social-icons d-flex gap-3">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright-bar text-center py-3">
+  <p class="mb-0 small">
+    © GreenWave 2025 | Kecuali dinyatakan sebaliknya, salinan situs web dilisensikan dengan 
+    <a href="#" class="copyright-link">Lisensi Internasional CC-BY</a>
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

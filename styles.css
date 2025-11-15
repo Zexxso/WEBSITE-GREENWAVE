@@ -1,0 +1,4071 @@
+/* === GLOBAL VARIABLES & BASE === */
+:root {
+  --accent: #4da300; /* Warna hijau muda */
+  font-family: 'Barlow', sans-serif;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* === MOBILE RESPONSIVE OVERRIDES === */
+
+/* 1. Styling untuk Sub-Navigasi Mobile yang Scrollable */
+.mobile-sub-nav {
+  position: fixed;
+  top: 68px; /* Tepat di bawah navbar utama (tinggi 68px) */
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-x: auto;  /* Ini yang membuatnya bisa di-scroll ke samping */
+  overflow-y: hidden;
+  white-space: nowrap; /* Mencegah link turun ke baris baru */
+  z-index: 999;
+}
+
+.mobile-sub-nav .nav {
+  flex-wrap: nowrap; /* Memastikan .nav Bootstrap tidak 'wrap' */
+}
+
+.mobile-sub-nav .nav-link {
+  color: #000 !important; /* Pastikan teks hitam */
+  font-weight: 600;
+  padding: 0.75rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* =================================
+   PERBAIKAN TOTAL TAMPILAN MOBILE (v4 - HERO FIX)
+   ================================= */
+@media (max-width: 991px) {
+
+  /* 1. Perbaikan Navbar (Tidak berubah) */
+  .navbar {
+    position: sticky !important; /* <-- DIUBAH */
+    top: 0; /* <-- DITAMBAHKAN: Menempel di paling atas */
+    z-index: 1030; /* <-- DITAMBAHKAN: Agar di atas konten lain */
+    background-color: #fff !important;
+    height: auto;
+    /* ...style lainnya... */
+  }
+  .navbar .container {
+    position: relative;
+  }
+  .navbar .navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 0 !important; 
+    margin-right: 0 !important;
+  }
+  .navbar-toggler,
+  .navbar .d-lg-none.text-dark {
+    z-index: 10;
+  }
+  .logo-mobile {
+    height: 100px !important; 
+    margin-top: 0 !important; 
+  }
+
+  /* 2. Perbaikan Navbar Kedua (Tidak berubah) */
+  .mobile-sub-nav {
+    position: sticky !important; /* <-- DIUBAH */
+    transition: transform 0.3s ease-out; /* <-- DITAMBAHKAN: Untuk animasi slide */
+    display: flex !important;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: #fff;
+    overflow-x: auto;
+    white-space: nowrap;
+    z-index: 998;
+  }
+  
+  /* 3. Perbaikan Hero Section */
+  header.hero {
+    margin-top: 0 !important;
+  }
+  
+  .hero-slide {
+    position: static !important;
+    height: auto !important;
+    min-height: auto !important;
+    display: block !important;
+    background-size: cover !important;
+    background-position: center !important;
+    
+    /* PERBAIKAN 1: Ukuran gambar dibuat konsisten 220px */
+    padding-top: 220px; /* <-- DIUBAH DARI 280px */
+    
+    /* DIHAPUS: max-height: 220px; */
+    /* DIHAPUS: overflow: hidden; */
+  }
+  
+  .hero-slide::after {
+    display: none !important; 
+  }
+
+  /* 4. Container (Tidak berubah) */
+  .hero-slide .container {
+    display: block !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important; 
+    margin: 0 !important;
+  }
+
+  /* 5. Caption dengan Background Putih */
+  .hero-caption {
+    position: static !important; 
+    background: #fff !important; 
+    color: #000 !important; 
+    
+    /* PERBAIKAN 3: Dibuat lebih ke bawah dgn menambah padding */
+    padding: 2rem 1.5rem !important; /* <-- DIUBAH DARI 1.5rem */
+    
+    margin: 0 !important;
+    max-width: 100% !important;
+    
+    /* PERBAIKAN 2: Rata tengah */
+    text-align: left; /* <-- DIUBAH DARI left */
+    
+    box-shadow: none;
+  }
+  
+  /* 6. Teks Hero (Tidak berubah) */
+  .hero-caption h1 {
+    font-size: 1.5rem !important; 
+    line-height: 1.3;
+    color: #000 !important;
+    text-shadow: none !important;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero-caption p {
+    font-size: 0.95rem !important; 
+    color: #333 !important;
+    text-shadow: none !important;
+    margin-bottom: 1rem;
+  }
+  
+  /* 7. Tombol Kuning (Tidak berubah) */
+  .hero-caption .btn {
+    background-color: #ffc107 !important; 
+    color: #000 !important;
+    border: none;
+    padding: 0.65rem 1.25rem !important;
+    font-weight: 700;
+    font-size: 0.9rem !important;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    align-items: center;
+  }
+  
+  /* 8. Indikator (Tidak berubah) */
+  .carousel-indicators {
+    position: static !important; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none !important; 
+  }
+}
+
+/* Kelas utilitas untuk menyembunyikan sub-nav saat scroll ke bawah */
+.sub-nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* =================================
+   STYLING HERO CONTROLS (v7 - FIX)
+   ================================= */
+
+/* === 1. STYLE DESKTOP (Layar > 992px) === */
+@media (min-width: 992px) {
+  
+  /* A. Container Indikator (Posisi) */
+  #heroCarousel .carousel-indicators {
+    position: absolute;
+    left: 15%;        
+    bottom: 10%;      
+    right: auto;
+    margin-left: 0;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    z-index: 2; 
+  }
+
+  /* B. Indikator (Style Bar) */
+  #heroCarousel .carousel-indicators button[data-bs-slide-to] {
+    width: 45px;
+    height: 5px; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    opacity: 1;
+    border: none;
+    border-radius: 0; 
+    margin: 0 4px;
+    padding: 0;
+  }
+
+  /* C. Indikator Aktif (Style Bar) */
+  #heroCarousel .carousel-indicators button[data-bs-slide-to].active {
+    background-color: #ffffff; 
+  }
+
+  /* D. Tombol Play/Pause (Style Desktop) */
+  #carouselPlayPauseDesktop {
+    background: transparent;
+    border: none;
+    color: #ffffff; 
+    font-size: 1.1rem;
+    padding: 0;
+    margin-right: 12px; 
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+  #carouselPlayPauseDesktop:hover {
+    opacity: 1;
+  }
+}
+
+
+/* === 2. STYLE MOBILE (Layar < 992px) === */
+@media (max-width: 991px) {
+  
+  #heroCarousel .carousel-indicators {
+    /* Atur layout flex untuk menampung bar + tombol */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Pindahkan ke bawah caption, di dalam area putih */
+    margin-top: 1.5rem; /* Beri jarak dari teks */
+    margin-bottom: 0.5rem; /* Jarak ke bawah */
+  }
+
+  #heroCarousel .carousel-indicators button[data-bs-slide-to] {
+    width: 45px; 
+    height: 5px; 
+    background-color: #e0e0e0; /* Inaktif (abu-abu) */
+    opacity: 1;
+    border: none;
+    border-radius: 0; 
+    margin: 0 4px;
+    text-indent: -999px;
+    padding: 0;
+  }
+
+  #heroCarousel .carousel-indicators button[data-bs-slide-to].active {
+    background-color: #333; /* Aktif (hitam) */
+  }
+  
+  /* C. Sembunyikan tombol pause desktop */
+  #carouselPlayPauseDesktop {
+    display: none;
+  }
+
+  /* D. Style tombol pause mobile (di posisi baru) */
+  #carouselPlayPauseMobile {
+    background: transparent;  
+    border: none;           
+    color: #333;           
+    font-size: 1.1rem;      
+    padding: 0;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    margin-right: 0; /* Hapus margin default */
+  }
+  #carouselPlayPauseMobile:hover {
+    opacity: 1;
+  }
+}
+
+
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-slide {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.85) 100%);
+  z-index: 1;
+}
+
+.hero-caption {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 850px;
+  padding: 3rem;
+  margin-left: 6%;
+  margin-bottom: 8%;
+}
+
+.hero-caption h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-caption p {
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.8rem;
+}
+
+.hero-caption .btn {
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* === NAVBAR BASE === */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 68px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  transition: all 0.4s ease;
+  z-index: 1000;
+  border-bottom: 1px solid transparent;
+}
+
+/* Saat discroll → putih dan ada border bawah */
+.navbar.scrolled {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .navbar-brand img {
+  height: 230px; /* UBAH dari 200px menjadi 250px (atau tinggi logo Anda) */
+  width: auto;
+  margin-top: 10px; /* UBAH dari 10px menjadi 0 */
+  filter: none!important;
+  transition: height 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand img {
+  height: 170px;
+  margin-top: 10px;
+}
+
+/* === NAV LINK STYLE === */
+.navbar .nav-link.dropdown-toggle::after {
+    display: none;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 600;
+  position: relative;
+  font-size: 1.05rem;
+  padding: 0 1rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+
+/* Warna teks berubah saat discroll */
+.navbar.scrolled .nav-link {
+  color: #000 !important;
+}
+
+/* === GARIS HIJAU ANIMASI === */
+.nav-item-line .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  /* Sesuaikan left dan width untuk menyejajarkan dengan teks */
+  left: 1rem; 
+  width: calc(100% - 2rem); 
+  height: 3px;
+  background-color: var(--accent, #4da300); /* selalu hijau */
+  transform: scaleX(0);
+  transform-origin: center; /* <--- DIKEMBALIKAN KE 'CENTER' */
+  transition: transform 0.3s ease;
+  z-index: 5;
+}
+
+.nav-item-line .nav-link:hover::before,
+.nav-item-line .nav-link.active::before {
+  transform: scaleX(1);
+}
+
+/* === FIX GARIS DI DROPDOWN === */
+.nav-item.dropdown .nav-link::before {
+  background-color: var(--accent, #4da300) !important;
+}
+.navbar.scrolled .nav-item.dropdown .nav-link::before {
+  background-color: var(--accent, #4da300) !important;
+}
+
+/* === DROPDOWN MENU === */
+.custom-dropdown {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  min-width: 230px;
+  padding: 0.5rem 0;
+  list-style: none;
+  z-index: 100;
+}
+
+.nav-item.dropdown:hover .custom-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* === DROPDOWN ITEM === */
+.custom-dropdown .dropdown-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.custom-dropdown .dropdown-item:hover {
+  background-color: rgba(77, 163, 0, 0.1);
+  color: var(--accent, #4da300);
+}
+
+/* === BUTTONS === */
+button,
+.btn,
+.btn-success,
+.btn-outline-success { /* btn-donasi dihapus dari sini */
+  border-radius: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.btn-donasi { /* Blok terpisah untuk btn-donasi */
+    border-radius: 5px; /* Sudut membulat */
+    color: #fff; /* Teks putih */
+    padding: 0.45rem 2rem; /* Ukuran tombol lebih besar */
+    font-size: 1.1rem; /* Ukuran teks lebih besar */
+    background-color: var(--accent); /* Warna latar */
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.btn,
+.btn-success{
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.btn:hover,
+.btn-success:hover {
+  background-color: #ffc107;
+  color: #212529;
+  transform: translateY(-2px);
+}
+
+.btn-donasi:hover { /* Sesuaikan hover jika perlu */
+  background-color: #ffc107;
+  color: #212529; /* Teks hitam saat hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(255, 193, 7, 0.4);
+}
+
+.navbar.scrolled .btn-donasi {
+    color: #fff; /* Pastikan teks tetap putih saat navbar di-scroll */
+}
+
+.btn-outline-success {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-outline-success:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* === STYLE KHUSUS TOMBOL KAMPANYE === */
+.btn-campaign {
+  /* UBAH PROPERTI DI BAWAH INI SESUAI KEINGINAN ANDA 
+  */
+
+  /* 1. Atur Warna */
+  background-color: var(--accent);  /* Ganti warnanya di sini */
+  color: #ffffff;                   /* Ganti warna teksnya di sini */
+  
+  /* 2. Atur Ukuran Teks & Tombol */
+  font-size: 0.95rem;         /* Ganti ukuran font */
+  padding-top: 0.6rem;      /* Ganti tebal tombol (atas) */
+  padding-bottom: 0.6rem;   /* Ganti tebal tombol (bawah) */
+  /* padding kiri-kanan sudah diatur oleh class px-4 di HTML */
+  
+  /* 3. Atur Bentuk */
+  border-radius: 5px; /* Ganti ke 8px untuk kotak, 50px untuk pil */
+  border: none;        /* Hapus 'none' jika ingin border */
+  
+  /* --- Properti lain (biarkan saja) --- */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* EFEK HOVER (Saat Kursor di atas tombol) */
+.btn-campaign:hover {
+  background-color: #ffc107;  /* Ganti warna hover */
+  color: #212529;              /* Ganti warna teks hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(255, 193, 7, 0.4);
+}
+
+/* === ABOUT / INTRO (Hover Effect) === */
+.about-item {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.about-item:hover {
+  transform: translateY(-10px); /* Mengangkat seluruh item ke atas */
+}
+
+.about-item img {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan standar */
+}
+
+.about-item:hover img {
+  transform: scale(1.05); /* Sedikit memperbesar gambar */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Bayangan lebih kuat */
+}
+
+.about-item h5 {
+  transition: color 0.3s ease;
+}
+
+.about-item:hover h5 {
+  color: black; /* Mengubah teks menjadi warna hitam */
+}
+
+/* === LATEST ARTICLES (Hover Effect) === */
+#latest .row h4 {
+  display: inline; /* Membuat underline hanya sebatas panjang teks */
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+#latest .row h4:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* Membuat garis bawah sedikit lebih tebal */
+}
+
+/* Hover untuk Kategori & Hashtag Artikel */
+.article-category,
+.article-hashtag {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.article-category:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.article-hashtag:hover {
+  color: var(--accent) !important; /* Memaksa warna jadi hijau (override text-muted) */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+/* === PERBAIKAN UNTUK TINGGI GAMBAR CAROUSEL === */
+
+#togetherCarousel .carousel-item img {
+  /* 1. Tetapkan tinggi yang konsisten */
+  /* Anda bisa mengubah 500px ini sesuai kebutuhan desain Anda */
+  height: 500px; 
+  
+  /* 2. Ini adalah bagian kuncinya:
+     - 'cover' akan membuat gambar "mengisi" area (500px)
+     - Gambar akan terpotong secara proporsional (tidak penyok)
+  */
+  object-fit: cover;
+  
+  /* 3. (Opsional) Memastikan pemotongan difokuskan di tengah */
+  object-position: center; 
+}
+
+/* Sesuaikan tinggi carousel untuk layar mobile */
+@media (max-width: 767px) {
+  #togetherCarousel .carousel-item img {
+    height: 300px; /* Gunakan tinggi yang lebih pendek untuk HP */
+  }
+}
+
+/* === PERBAIKAN UNTUK TINGGI GAMBAR ARTIKEL === */
+
+#latest img {
+  /* 1. Tetapkan tinggi yang konsisten untuk semua gambar */
+  /* Ubah 220px ini jika Anda ingin lebih tinggi atau pendek */
+  height: 220px;
+  
+  /* 2. Gunakan 'cover' agar gambar mengisi area */
+  object-fit: cover;
+  
+  /* 3. Pastikan gambar mengisi lebar kolomnya */
+  width: 100%;
+  
+  /* 4. (Opsional) Fokus pemotongan di tengah */
+  object-position: center;
+}
+
+/* Sesuaikan tinggi gambar artikel untuk layar mobile */
+@media (max-width: 767px) {
+  #latest img {
+    height: 250px; /* Anda bisa buat lebih tinggi/pendek di HP */
+  }
+}
+
+/* === DONATION CAMPAIGN (Fix Image Height) === */
+#donation-campaign .card-img-top {
+  height: 300px; /* Atur tinggi yang sama untuk semua gambar */
+  width: 100%;
+  object-fit: cover; /* Ini bagian penting: memotong gambar agar pas, bukan penyok */
+}
+
+/* === FOOTER === */
+.site-footer {
+  /* Ganti #1A3B1A dengan kode warna hijau tua yang Anda inginkan */
+  background-color: #1A3B1A; 
+  color: #ffffff;
+  padding: 2.5rem 0 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.site-footer .footer-heading {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.footer-link,
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding-bottom: 0.75rem; /* Jarak antar link */
+  font-weight: 600;
+}
+
+.footer-link:hover,
+.footer-links a:hover {
+  color: var(--accent); /* Pakai warna hijau muda (accent) saat hover */
+  text-decoration: underline;
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ikon Sosial */
+.social-icons a {
+  color: #ffffff;
+  font-size: 1.5rem; /* Ukuran ikon */
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent); /* Pakai warna hijau muda (accent) saat hover */
+}
+
+/* Bilah Hak Cipta */
+.copyright-bar {
+  /* Warna sedikit lebih gelap dari footer utama */
+  background-color: #122B12; 
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1.25rem 0;
+}
+
+.copyright-bar p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0;
+}
+
+.copyright-bar .copyright-link {
+   color: #ffffff;
+   font-weight: 600;
+   text-decoration: none;
+}
+.copyright-bar .copyright-link:hover {
+   text-decoration: underline;
+}
+
+/* === ACTION / DONATE CTA (Form Style) === */
+#act {
+  background-color: var(--accent) !important; /* Memaksa latar belakang hijau terang */
+  color: #fff;
+  text-align: left !important; /* Override text-center dari HTML lama */
+}
+
+#act .form-label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Style input agar tetap putih (seperti di gambar) */
+#act .form-control-cta {
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  color: #212529;
+}
+#act .form-control-cta:focus {
+  background-color: #ffffff;
+}
+
+/* Teks disclaimer */
+#act .disclaimer-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Tombol Oranye "Bergabung Sekarang" */
+#act .cta-submit-btn {
+  background-color: #f26442; /* Warna oranye dari gambar contoh */
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px; /* Samakan dengan radius tombol lain */
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+#act .cta-submit-btn:hover {
+  background-color: #d95333; /* Oranye lebih gelap saat hover */
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* === STYLE HALAMAN KONTEN (Non-Hero) === */
+.page-content {
+  margin-top: 20px; /* jarak agar tidak nabrak navbar */
+  padding-top: 0; 
+  padding-bottom: 0;
+}
+
+.page-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.page-content p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* === Tentang Kami Image === */
+.about-main-image {
+  display: block;
+  width: 100%;
+  max-width: none;         /* biar bisa full lebar kolom */
+  height: 600px;
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* buat gambar kanan mentok ke sisi layar desktop */
+@media (min-width: 992px) {
+  .about-main-image {
+    position: relative;
+    right: 0;
+    
+  }
+}
+
+/* Responsif agar tetap bagus di mobile */
+@media (max-width: 991px) {
+  .about-image {
+    max-width: 100%;
+    margin: 20px 0 0 0;
+  }
+}
+
+/* === ABOUT SECTION === */
+.about-section {
+  padding: 80px 0;
+}
+
+/* gambar sejarah & misi */
+.about-section .sejarah-image,
+.about-section .misi-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* card teks */
+.about-text-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0;
+  color: #222;
+  background-color: #f8f9fa;
+  margin-left: 0;
+}
+
+/* bikin teks dan gambar nempel (tanpa gap besar) */
+.about-section .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about-section .col-lg-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* jika urutan dibalik (gambar kanan) */
+.flex-lg-row-reverse .misi-image {
+  border-radius: 0;
+}
+
+.flex-lg-row-reverse .about-text {
+  border-radius: 0;
+}
+
+.about-section h2 {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .about-section .about-text {
+    padding: 24px;
+  }
+
+  .about-section .col-lg-6 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+/* === NILAI DASAR (KODE BARU) === */
+.nilai-card {
+  background-color: #f8f9fa; /* Warna senada dengan about-text-card */
+  border-radius: 8px;
+  height: 100%; /* Membuat semua kartu sama tinggi */
+  border-left: 4px solid var(--accent); /* Garis aksen hijau di kiri */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.nilai-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.nilai-card h5 {
+  margin-bottom: 0.75rem;
+}
+
+.nilai-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem; /* Ukuran font paragraf nilai dasar */
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === STYLE HALAMAN TIM KAMI === */
+
+/* Menambahkan padding di atas konten agar tidak tertutup navbar */
+.page-content {
+  /* 68px adalah tinggi navbar. 
+     my-5 (margin top/bottom) pada container akan memberi jarak tambahan */
+  padding-top: 68px; 
+}
+
+.management-list li {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.management-list li strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.team-card-wrapper {
+  background-color: #f8f9fa; /* Bootstrap 'bg-light' */
+  border-radius: 0.5rem; /* Bootstrap 'rounded' */
+  padding: 2.5rem;
+}
+
+.team-member {
+  margin-bottom: 1.5rem;
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* <-- Tambahkan baris ini */
+}
+
+.team-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem !important;
+  color: #111;
+}
+
+.team-title {
+  font-size: 0.95rem;
+  color: #6c757d; /* Bootstrap 'text-muted' */
+}
+
+/* === SECTION LAPORAN TAHUNAN (UPDATE v2) === */
+
+.report-section {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.report-title {
+  font-family: 'Barlow', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+/* 1. PERUBAHAN FONT (Sesuai permintaan Anda "Marlow" -> Barlow) */
+.report-body {
+  font-family: 'Barlow', sans-serif; /* <-- Diubah dari Montserrat */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 2rem;
+  max-width: 550px;
+}
+
+.report-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol Kuning (.btn-report) tidak ada perubahan */
+.btn-report {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: #ffc107;
+  color: #212529;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-report:hover {
+  background-color: #e0a800;
+  color: #212529;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(255, 193, 7, 0.4);
+}
+
+
+/* 2. PERUBAHAN TATA LETAK DESKTOP (Gambar lebih besar) */
+@media (min-width: 992px) {
+  .report-section .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Teks mengambil 40% dari lebar row */
+  .report-text-content {
+    flex: 0 0 auto;
+    width: 40%;
+    padding-right: 2rem; /* Jarak antara teks dan gambar */
+    /* Padding kiri akan mengikuti 'container' di HTML */
+  }
+
+  /* Kolom gambar mengambil 60% sisa lebar row */
+  .report-image-content {
+    flex: 0 0 auto;
+    width: 60%;
+    overflow: hidden; /* Penting untuk "memotong" gambar yang meluber */
+  }
+
+  .report-image {
+    /* Perhitungan baru agar gambar jauh lebih besar */
+    width: calc(100% + 30vw); /* 100% dari 60% + 30% lebar layar */
+    
+    /* Perhitungan baru untuk menggeser gambar ke kiri */
+    margin-left: -10vw; /* Geser 10% lebar layar ke kiri */
+
+    max-width: none; /* Wajib agar 'width' di atas berfungsi */
+    height: 600px; /* Anda bisa sesuaikan tingginya */
+    object-fit: cover;
+    border-radius: 8px 0 0 8px; /* Sudut tumpul hanya di kiri */
+  }
+}
+
+/* Tampilan mobile (Stacked) tidak ada perubahan */
+@media (max-width: 991px) {
+  .report-image-content {
+    margin-top: 2.5rem;
+  }
+  
+  .report-title,
+  .report-body {
+    text-align: left;
+  }
+
+  .report-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* === SUPPORT BANNER (BARU) === */
+.support-banner-section {
+  /* Menggunakan warna hijau tua yang konsisten dengan footer Anda */
+  background-color: #1A3B1A; 
+  color: #ffffff; /* Teks putih */
+  padding: 4rem 0; /* Memberi jarak atas dan bawah */
+}
+
+/* CSS BARU UNTUK SVG */
+.support-banner-icon {
+  display: block;
+  margin: 0 auto 1.5rem auto; 
+  height: 80px; 
+  width: 80px; /* <-- Ubah ini agar proporsional */
+  
+  /* Atur warna ikon SVG */
+  stroke: #ffffff; 
+}
+
+.support-banner-text {
+  font-family: 'Barlow', sans-serif; /* Menggunakan font Barlow */
+  font-weight: 500; /* Sedikit tebal agar mudah dibaca */
+  font-size: 1.25rem; /* Ukuran font (bisa disesuaikan) */
+  line-height: 1.7;
+  max-width: 900px; /* Agar tidak terlalu lebar di desktop */
+  margin: 0 auto; /* Otomatis tengah */
+}
+
+/* Penyesuaian untuk mobile */
+/* CSS MOBILE BARU */
+@media (max-width: 767px) {
+  .support-banner-section {
+    padding: 3rem 1rem; 
+  }
+  .support-banner-icon {
+    height: 60px; 
+    width: 60px; /* <-- Tambahkan ini */
+  }
+  .support-banner-text {
+    font-size: 1.1rem; 
+  }
+}
+
+/* === FINANCIAL REPORTS SECTION (BARU) === */
+.financial-reports-section {
+  /* Menggunakan warna abu-abu sangat muda, konsisten dg .nilai-card */
+  background-color: #e9ecef; 
+  padding: 5rem 0;
+}
+
+.financial-reports-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* Ukuran judul section */
+  color: #212529;
+  margin-bottom: 4rem; /* Jarak antara judul dan grid */
+}
+
+.report-item {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #ffffff; /* Latar putih untuk kartu */
+  padding: 2rem 1rem;
+  border-radius: 8px; /* Sudut membulat */
+  height: 100%; /* Memastikan semua kartu sama tinggi */
+  
+  /* Bayangan awal (subtil) */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
+  /* Transisi untuk efek hover "timbul" */
+  transition: all 0.3s ease; 
+}
+
+/* ...DENGAN CSS BARU INI */
+.report-item-icon {
+  height: 80px; 
+  width: 80px; /* <-- Atur lebar & tinggi secara eksplisit untuk SVG */
+  margin-bottom: 1.5rem;
+  
+  /* Atur warna garis (stroke) awal SVG */
+  stroke: #212529; /* Warna hitam (sama seperti teks) */
+  
+  /* Transisi agar perubahan warna halus */
+  transition: stroke 0.3s ease; 
+}
+
+.report-item-text {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #212529; /* Warna teks awal */
+  margin-bottom: 0;
+  transition: color 0.3s ease; /* Transisi untuk warna teks */
+}
+
+
+/* === EFEK HOVER "TIMBUL" (Sesuai Permintaan) === */
+.report-item:hover {
+  /* 1. Mengangkat kartu ke atas */
+  transform: translateY(-8px); 
+  
+  /* 2. Bayangan lebih kuat agar terlihat "timbul" */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); 
+  
+
+  /* 4. TAMBAHAN: Ubah warna IKON jadi hijau juga! */
+  .report-item-icon {
+    stroke: var(--accent); /* Mengubah warna garis (stroke) SVG */
+  }
+}
+
+/* === VICTORY STORIES SECTION (BARU) === */
+.victory-stories-section {
+  background-color: #ffffff;
+  padding: 5rem 0;
+  border-top: 1px solid #f0f0f0; /* Garis pemisah tipis */
+}
+
+.victory-section-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #212529;
+}
+
+.see-all-link {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  color: var(--accent); /* Warna hijau */
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.see-all-link:hover {
+  text-decoration: underline;
+  color: #212529;
+}
+
+.victory-section-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+}
+
+/* Styling untuk Kartu Cerita */
+.story-card {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 8px; /* Sudut membulat */
+  overflow: hidden; /* Penting untuk gambar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%; /* Membuat semua kartu sama tinggi */
+}
+
+.story-card-image {
+  position: relative;
+  overflow: hidden; /* Untuk efek zoom */
+}
+
+.story-card-img {
+  width: 100%;
+  height: 200px; /* Atur tinggi gambar agar seragam */
+  object-fit: cover; /* Memastikan gambar pas tanpa distorsi */
+  transition: transform 0.3s ease;
+}
+
+.story-card-content {
+  padding: 1.25rem;
+}
+
+.story-category {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent); /* Warna hijau */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.story-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #212529;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  /* Mencegah judul terlalu panjang (opsional) */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3; 
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  transition: color 0.3s ease;
+}
+
+.story-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.story-meta {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Efek Hover pada Kartu */
+.story-card:hover {
+  transform: translateY(-5px); /* Mengangkat kartu */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Bayangan lebih kuat */
+}
+
+.story-card:hover .story-card-img {
+  transform: scale(1.05); /* Zoom gambar */
+}
+
+.story-card:hover .story-title {
+  color: var(--accent); /* Judul berubah jadi hijau */
+}
+
+/* Tombol "Selengkapnya" */
+.btn-load-more {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  padding: 0.6rem 2.5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  
+  /* Gaya default */
+  background-color: #ffffff; 
+  color: var(--accent); 
+  border: 2px solid var(--accent); 
+  
+  /* TIMPA BAYANGAN DEFAULT: 
+    Ganti bayangan hitam generik dengan bayangan hijau subtil 
+  */
+  box-shadow: 0 3px 8px rgba(77, 163, 0, 0.15);
+}
+
+.btn-load-more:hover {
+  /* Gaya hover */
+  background-color: var(--accent); 
+  color: #ffffff; 
+  
+  /* TIMPA BAYANGAN HOVER: 
+    Ganti bayangan kuning dari .btn:hover dengan bayangan hijau
+  */
+  transform: translateY(-2px); /* Jaga efek "lift" */
+  box-shadow: 0 5px 12px rgba(77, 163, 0, 0.4); 
+}
+
+/* === BACK LINK SECTION (BARU) === */
+.back-link-section {
+  padding: 3rem 0; /* Jarak atas dan bawah */
+  background-color: #ffffff;
+  /* Garis pemisah tipis di atas */
+  border-top: 1px solid #f0f0f0; 
+}
+
+/* CSS BARU (LEBIH KECIL) */
+.back-link {
+  display: inline-flex; 
+  align-items: center;
+  gap: 0.5rem; 
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700; 
+  font-size: 1.25rem; /* <-- DIUBAH JADI LEBIH KECIL */
+  color: #212529; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link-icon {
+  width: 1.25rem; /* <-- DIUBAH AGAR SESUAI FONT */
+  height: 1.25rem; /* <-- DIUBAH AGAR SESUAI FONT */
+  stroke-width: 3; 
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* Penyesuaian untuk mobile */
+@media (max-width: 767px) {
+  .back-link {
+    font-size: 1.1rem; /* <-- DIUBAH JADI LEBIH KECIL */
+  }
+  .back-link-icon {
+    width: 1.1rem; /* <-- DIUBAH AGAR SESUAI FONT */
+    height: 1.1rem; /* <-- DIUBAH AGAR SESUAI FONT */
+  }
+}
+
+/* === JOIN US SECTION (HALAMAN PEKERJAAN) === */
+.join-us-section {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.join-text-content h1 {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 3rem; 
+  color: #212529;
+  margin-bottom: 1.5rem;
+  line-height: 1.5; 
+}
+
+.join-text-content .highlight-bg {
+  background-color: #ffffff; 
+  padding: 0.2rem 0.75rem; 
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.join-text-content p {
+  font-family: 'Barlow', sans-serif; 
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+  max-width: 500px; 
+}
+
+.join-image {
+  width: 100%;
+  height: 500px; 
+  object-fit: cover; 
+  border-radius: 0; /* <-- PERUBAHAN: Sudut rounded dihilangkan */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Penyesuaian untuk mobile */
+@media (max-width: 991px) {
+  .join-us-section {
+    padding: 3rem 0;
+  }
+  
+  .join-text-content h1 {
+    font-size: 2.5rem; 
+  }
+
+  .join-image-content {
+    margin-top: 2.5rem; 
+  }
+
+  .join-image {
+    height: 350px;
+    border-radius: 0; /* <-- PERUBAHAN: Pastikan tidak rounded */
+  }
+}
+
+/* === TAMBAHAN UNTUK GAMBAR MELUBER (JOIN US) - VERSI REVISI === */
+/* === TAMBAHAN UNTUK GAMBAR MELUBER (JOIN US) - PERBAIKAN v3 === */
+@media (min-width: 992px) {
+  .join-us-section {
+    padding-top: 5rem; 
+    padding-bottom: 5rem; 
+    overflow-x: hidden; 
+  }
+
+  /* Kita paksa kolom teks untuk mengambil 45% lebar.
+    Ini akan memberi ruang yang pasti untuk paragraf Anda.
+  */
+  .join-text-content.col-lg-6 {
+    flex: 0 0 auto;
+    width: 45%; 
+    padding-right: 2rem; /* Tetap beri jarak dari gambar */
+  }
+  
+  /* Kita paksa kolom gambar untuk mengambil 55% sisa lebar.
+  */
+  .join-image-content.col-lg-6 {
+    flex: 0 0 auto;
+    width: 55%; 
+  }
+
+  .join-image {
+    /* Buat gambar meluber HANYA ke kanan.
+      Ini akan mengisi 55% kolom + 30% lebar layar.
+    */
+    width: calc(100% + 30vw); 
+    
+    /* HAPUS 'margin-left: -10vw;' DARI SINI */
+    
+    max-width: none; 
+    height: 600px; 
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* === JOB LISTINGS SECTION (HALAMAN PEKERJAAN) === */
+.job-listings-section {
+  /* Latar abu-abu muda, konsisten dg section lain */
+  background-color: #f8f9fa; 
+  padding: 5rem 0;
+}
+
+.job-section-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #212529;
+  margin-bottom: 0.75rem;
+}
+
+.job-section-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3rem; /* Jarak ke daftar lowongan */
+}
+
+.job-item {
+  display: flex; /* <-- Kunci layout: Teks di samping gambar */
+  background-color: #ffffff;
+  margin-bottom: 1.5rem; /* Jarak antar lowongan */
+  border-radius: 8px;
+  overflow: hidden; /* Penting untuk radius gambar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.job-item:hover {
+  transform: translateY(-5px); /* Efek timbul */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.job-item-image-link {
+  display: block;
+  flex-shrink: 0; /* Mencegah gambar menyusut */
+  width: 300px; /* Lebar tetap untuk gambar */
+}
+
+.job-item-image {
+  width: 100%;
+  height: 100%; /* Gambar mengisi tinggi kontainer */
+  object-fit: cover; /* Mencegah distorsi */
+  transition: transform 0.3s ease;
+}
+
+.job-item:hover .job-item-image {
+  transform: scale(1.05); /* Efek zoom pada gambar */
+}
+
+.job-item-content {
+  padding: 1.5rem 2rem; /* Jarak di dalam kotak teks */
+}
+
+.job-category {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent); /* Warna hijau */
+  text-transform: uppercase;
+}
+
+.job-title-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #212529;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.job-title-link:hover {
+  color: var(--accent); /* Judul jadi hijau saat hover */
+}
+
+.job-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+.job-meta {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1rem;
+  display: block;
+}
+
+/* Link di bagian bawah (bukan yg hijau) */
+.see-all-link-black {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  color: #212529; /* Teks hitam */
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.see-all-link-black:hover {
+  color: var(--accent); /* Berubah hijau saat hover */
+  text-decoration: underline;
+}
+
+/* Penyesuaian untuk Mobile */
+@media (max-width: 767px) {
+  .job-item {
+    flex-direction: column; /* Tumpuk: Gambar di atas, teks di bawah */
+  }
+
+  .job-item-image-link {
+    width: 100%; /* Lebar penuh */
+    height: 200px; /* Tinggi tetap untuk gambar */
+  }
+
+  .job-item-content {
+    padding: 1.5rem; /* Padding standar */
+  }
+}
+
+/* === OTHER OPTIONS SECTION (HALAMAN PEKERJAAN) === */
+.other-options-section {
+  /* Latar abu-abu muda, sama dengan section lowongan */
+  background-color: #f8f9fa; 
+  padding: 5rem 0;
+  /* Garis pemisah dari section atas */
+  border-top: 1px solid #e9ecef; 
+}
+
+.option-item-link {
+  display: inline-block; /* Agar bisa di-transform */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.option-image {
+  /* Ukuran gambar lingkaran */
+  width: 150px; 
+  height: 150px;
+  /* Membuat gambar menjadi lingkaran */
+  border-radius: 50%; 
+  object-fit: cover; /* Mencegah distorsi */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.option-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #212529;
+  margin-top: 1.5rem; /* Jarak dari gambar */
+  transition: color 0.3s ease;
+}
+
+/* Efek Hover */
+.option-item-link:hover {
+  transform: translateY(-5px); /* Efek timbul/mengangkat */
+}
+
+.option-item-link:hover .option-image {
+  /* Bayangan lebih kuat saat hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+}
+
+.option-item-link:hover .option-title {
+  color: var(--accent); /* Teks berubah jadi hijau */
+}
+
+/* === FAQ HERO SECTION (HALAMAN PERTANYAAN) === */
+.faq-hero-section {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.faq-text-content .faq-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 4rem; 
+  color: #212529;
+  margin-bottom: 1.5rem;
+  line-height: 1.5; 
+}
+
+/* Style untuk highlight putih */
+.faq-text-content .highlight-bg {
+  background-color: #ffffff; 
+  padding: 0.2rem 0.75rem; 
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
+  /* Membuat setiap span jadi satu baris */
+  display: table; 
+  margin-bottom: 8px; /* Jarak antar baris highlight */
+}
+
+.faq-body {
+  font-family: 'Barlow', sans-serif; 
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+  max-width: 500px; 
+  margin-bottom: 2rem; /* Jarak ke tombol */
+}
+
+.faq-image {
+  width: 100%;
+  height: 500px; 
+  object-fit: cover; 
+  border-radius: 0; /* Gambar tidak rounded */
+}
+
+/* Penyesuaian mobile (gambar di bawah teks) */
+@media (max-width: 991px) {
+  .faq-hero-section {
+    padding: 3rem 0;
+  }
+  
+  .faq-text-content .faq-title {
+    font-size: 2.5rem; 
+  }
+
+  .faq-image-content {
+    margin-top: 2.5rem; 
+  }
+
+  .faq-image {
+    height: 350px;
+  }
+}
+
+/* Efek gambar meluber di desktop */
+@media (min-width: 992px) {
+  .faq-hero-section {
+    padding-top: 5rem; 
+    padding-bottom: 5rem; 
+    overflow-x: hidden; 
+  }
+
+  .faq-text-content.col-lg-6 {
+    flex: 0 0 auto;
+    width: 45%; 
+    padding-right: 2rem; 
+  }
+  
+  .faq-image-content.col-lg-6 {
+    flex: 0 0 auto;
+    width: 55%; 
+  }
+
+  .faq-image {
+    width: calc(100% + 30vw); 
+    max-width: none; 
+    height: 600px; 
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* === FAQ ACCORDION SECTION (HALAMAN PERTANYAAN) === */
+.faq-accordion-section {
+  padding: 4rem 0 5rem 0;
+  /* Latar abu-abu sangat muda */
+  background-color: #f8f9fa; 
+  /* Garis pemisah dari hero section */
+  border-top: 1px solid #e9ecef; 
+}
+
+.faq-accordion-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem; /* Ukuran "Tentang Greenpeace" */
+  color: #212529;
+  margin-bottom: 1.5rem;
+}
+
+/* === Mengubah Style Accordion Bootstrap === */
+
+/* Latar belakang & border item */
+.accordion-item {
+  border: none; /* Hapus border default */
+  border-radius: 5px; /* Sedikit rounded */
+  overflow: hidden; /* Penting untuk radius */
+  margin-bottom: 0.75rem; /* Jarak antar item */
+}
+
+/* Tombol (Header) */
+.accordion-header .accordion-button {
+  background-color: #1A3B1A; /* <-- Warna hijau tua footer */
+  color: #ffffff; /* Teks putih */
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  
+  /* Hapus bayangan saat diklik */
+  box-shadow: none; 
+  border-radius: 0;
+}
+
+/* Tombol (Saat ditutup / .collapsed) */
+.accordion-header .accordion-button.collapsed {
+  border-radius: 5px; /* Hanya rounded saat tertutup */
+}
+
+/* Tombol (Saat terbuka) */
+.accordion-header .accordion-button:not(.collapsed) {
+  /* Hapus border radius atas */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  /* Beri garis pemisah putih */
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.15); 
+}
+
+/* === MENGGANTI IKON PANAH (SESUAI PERMINTAAN TERAKHIR) === */
+.accordion-button::after {
+  /* Panah bawah (v) */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+  background-size: 1rem !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* Saat TERBUKA → panah ke atas */
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg) !important;
+}
+
+/* Saat TERTUTUP → panah ke bawah */
+.accordion-button.collapsed::after {
+  transform: rotate(0deg) !important;
+}
+
+/* Konten (Body) */
+.accordion-body {
+  background-color: #ffffff; /* Latar putih untuk jawaban */
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  opacity: 0;
+}
+
+.accordion-collapse.show .accordion-body{
+  animation: fadeIn 0.3s ease-out forwards;
+  animation-delay: 0s;
+}
+
+/* === ANIMASI FADE-IN UNTUK ACCORDION === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* Efek tambahan: sedikit geser ke atas saat muncul */
+    transform: translateY(-10px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === CAMPAIGN GRID SECTION (BARU) === */
+.campaign-section {
+  /* Latar abu-abu, konsisten dengan section accordion */
+  background-color: #f8f9fa; 
+  padding: 4rem 0;
+  border-top: 1px solid #e9ecef; 
+}
+
+.campaign-card {
+  display: block;
+  position: relative; /* Kunci untuk overlay */
+  height: 350px; /* Tinggi kartu seragam */
+  border-radius: 8px;
+  overflow: hidden; /* Agar radius rapi */
+  text-decoration: none;
+  
+  /* Background image diatur di HTML */
+  background-size: cover;
+  background-position: center;
+  
+  /* Border hijau tebal */
+  border: 4px solid var(--accent); 
+  
+  transition: transform 0.3s ease;
+}
+
+/* Overlay gelap di atas gambar */
+.campaign-card::after {
+  content: '';
+  position: absolute;
+  inset: 0; /* (top: 0; left: 0; right: 0; bottom: 0;) */
+  
+  /* Gradient gelap agar teks terbaca */
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.6) 0%, 
+    rgba(0, 0, 0, 0.4) 40%, 
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  
+  z-index: 1; /* Di atas gambar, di bawah teks */
+  transition: background 0.3s ease;
+}
+
+/* Kontainer untuk Teks & Tombol */
+.campaign-card-content {
+  position: relative; /* Kunci agar di atas overlay */
+  z-index: 2; 
+  height: 100%;
+  padding: 1.25rem;
+  
+  /* Flexbox untuk menata: 
+    - Judul/teks di atas
+    - Tombol di bawah
+  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.campaign-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.campaign-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Efek Hover */
+.campaign-card:hover {
+  transform: translateY(-5px); /* Mengangkat kartu */
+}
+
+.campaign-card:hover::after {
+  /* Overlay sedikit lebih terang saat di-hover */
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.3) 40%, 
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* === STYLE LINK EMAIL (BARU) === */
+.email-link {
+  /* Teks hitam/gelap, bukan biru */
+  color: #333; 
+  font-weight: 600; /* Sedikit tebal */
+  
+  /* Hapus garis bawah default */
+  text-decoration: none; 
+  
+  /* Buat garis bawah kustom */
+  border-bottom: 2px solid var(--accent); /* Garis hijau (dari --accent) */
+  padding-bottom: 2px; /* Jarak antara teks dan garis */
+  
+  transition: all 0.2s ease;
+}
+
+/* Efek hover */
+.email-link:hover {
+  color: var(--accent); /* Teks berubah jadi hijau */
+  border-bottom-color: #212529; /* Garis bawah berubah jadi hitam */
+}
+
+/* === CTA CONTACT SECTION (BARU) === */
+.cta-contact-section {
+  /* Latar putih */
+  background-color: #ffffff; 
+  padding: 5rem 0;
+  /* Garis pemisah dari section di atasnya */
+  border-top: 1px solid #f0f0f0; 
+}
+
+.cta-contact-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* Ukuran judul */
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.cta-contact-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem; /* Ukuran subjudul */
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2rem; /* Jarak ke tombol */
+}
+
+/* === CAMPAIGN LINKS SECTION (BARU) === */
+.campaign-links-section {
+  /* Latar abu-abu muda, konsisten */
+  background-color: #f8f9fa; 
+  padding: 5rem 0;
+  border-top: 1px solid #e9ecef; /* Garis pemisah */
+}
+
+.campaign-links-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* Ukuran "Pelajari Kampanye Kami" */
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.campaign-links-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem; /* Ukuran subjudul */
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  /* Batasi lebar agar rapi */
+  max-width: 750px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style untuk 5 item kampanye */
+.campaign-link-item {
+  display: inline-block; /* Agar bisa di-transform */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.campaign-link-image {
+  /* Ukuran lingkaran, dibuat pas untuk 5 kolom */
+  width: 130px; 
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.campaign-link-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 1rem; /* Ukuran "Hutan >" */
+  color: #212529;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Efek Hover */
+.campaign-link-item:hover {
+  transform: translateY(-5px); /* Angkat item */
+}
+
+.campaign-link-item:hover .campaign-link-image {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Bayangan lebih kuat */
+}
+
+.campaign-link-item:hover .campaign-link-title {
+  color: var(--accent); /* Teks berubah jadi hijau */
+}
+
+/* === ACTION GRID SECTION (BARU) === */
+.action-grid-section {
+  /* Latar putih, terpisah dari .campaign-links-section */
+  background-color: #ffffff; 
+  padding: 5rem 0;
+  border-top: 1px solid #f0f0f0; 
+}
+
+/* Judul dan Subjudul */
+.action-grid-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.action-grid-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 3rem; /* Jarak ke grid kartu */
+}
+
+/* Kartu Aksi */
+.action-card {
+  display: flex; /* Kunci agar tombol bisa .mt-auto */
+  flex-direction: column; /* Tumpuk: gambar di atas, konten di bawah */
+  height: 100%; /* Kunci untuk .mt-auto */
+  
+  background-color: #ffffff;
+  border: 1px solid #e9ecef; /* Border abu-abu tipis */
+  border-radius: 8px;
+  overflow: hidden; /* Untuk merapikan gambar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.action-card:hover {
+  /* DIHAPUS: transform: translateY(-5px); */
+  
+  /* DIUBAH: Bayangan dibuat lebih kuat/hitam */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); 
+}
+
+.action-card-img {
+  width: 100%;
+  height: 220px; /* Tinggi gambar seragam */
+  object-fit: cover;
+}
+
+/* Konten Kartu (Teks & Tombol) */
+.action-card-content {
+  padding: 1.25rem;
+  /* Kunci untuk .mt-auto di tombol */
+  display: flex; 
+  flex-direction: column;
+  flex-grow: 1; 
+}
+
+.action-category {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent); /* Warna hijau */
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.action-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #212529;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  
+  /* TAMBAHAN: Transisi agar halus */
+  transition: color 0.3s ease;
+}
+
+/* TAMBAHAN: Efek hover baru */
+.action-title:hover {
+  color: var(--accent); /* Teks berubah jadi hijau */
+  text-decoration: underline; /* Teks diberi garis bawah */
+}
+
+.action-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* === STYLING UNTUK STATS SECTION === */
+
+.stats-section .stat-icon i {
+  color: #4CAF50; /* Anda bisa mengganti ini dengan warna hijau utama Anda */
+  /* Jika Anda menggunakan gambar:
+     width: 80px; 
+     height: 80px;
+     margin-bottom: 15px;
+  */
+}
+
+.stats-section .stat-number {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.75rem; /* 44px */
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.stats-section .stat-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem; /* 14.4px */
+  color: #555;
+  line-height: 1.6;
+  /* Menambahkan padding agar tidak terlalu lebar di layar besar */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* BARU: Styling untuk "Sumber:" */
+.stats-section .stat-source {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem; /* 14.4px */
+  color: #555;
+}
+
+.stats-section .stat-source em {
+  font-style: italic; /* Membuat "Sumber:" italic */
+}
+
+.stats-section .stat-source a {
+  font-style: italic; /* Membuat link (BNPB, dll) juga italic */
+  font-weight: 600;
+  color: #333; /* Warna teks link */
+  text-decoration: underline;
+  text-decoration-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px; /* Jarak garis bawah dari teks */
+  transition: color 0.3s ease;
+}
+
+.stats-section .stat-source a:hover {
+  color: #000;
+}
+
+/* === STYLING KONTEN 2 KOLOM (LEMAH KOMITMEN & APA KAMI LAKUKAN) === */
+.content-section h2 {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem; /* 36px */
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; /* 16px */
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Tombol Outline (Selamatkan Hutan Papua) */
+.btn-outline-dark-green {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #222;
+  border: 2px solid #222;
+  border-radius: 4px; /* Sedikit rounded corner */
+  padding: 12px 28px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark-green:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+
+/* === STYLING LINK KAMPANYE (CIRCULAR) === */
+.campaign-links-section {
+  background-color: #f8f9fa2b; /* Latar belakang abu-abu muda */
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.campaign-links-section h2 {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+/* Pastikan .campaign-item di HTML Anda 
+  tidak memiliki class 'd-flex' atau semacamnya 
+*/
+.campaign-item {
+  text-align: center; /* Memastikan semuanya terpusat */
+  margin-bottom: 25px;
+}
+
+.campaign-item img {
+  width: 120px;       /* DIUBAH: Ukuran gambar dikecilkan */
+  height: 120px;      /* DIUBAH: Ukuran gambar dikecilkan */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  object-fit: cover;  /* Memastikan gambar terpotong rapi, tidak gepeng */
+  margin-bottom: 20px; /* Jarak antara gambar dan teks di bawahnya */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.campaign-item img:hover {
+  transform: scale(1.05); /* Sedikit membesar saat di-hover */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.campaign-item a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block; /* Memastikan link berada di barisnya sendiri */
+}
+
+.campaign-item a:hover {
+  color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  text-decoration: underline;
+}
+
+/* === STYLING KABAR TERBARU KAMPANYE === */
+
+.latest-news-section .section-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* 32px */
+  color: #222;
+  border-bottom: 3px solid #222;
+  padding-bottom: 10px;
+  display: inline-block; /* Agar border mengikuti lebar teks */
+}
+
+/* Menggunakan d-flex (Bootstrap) tapi kita atur lebarnya */
+.news-image-container {
+  width: 100%; /* Lebar penuh di mobile */
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Untuk layar medium (tablet) ke atas */
+@media (min-width: 768px) {
+  .news-image-container {
+    width: 300px; /* Atur lebar gambar tetap */
+    height: 180px; /* Atur tinggi gambar tetap */
+  }
+  
+  .news-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.news-content-container {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.news-category {
+  font-size: 0.8rem; /* 12.8px */
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.news-title {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.4rem; /* 22.4px */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.news-title a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.news-title a:hover {
+  /* CSS BARU (HANYA GARIS BAWAH) */
+  text-decoration: underline;
+}
+
+.news-excerpt {
+  font-size: 1rem; /* 16px */
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.news-meta {
+  font-size: 0.85rem; /* 13.6px */
+  color: #777;
+  margin-bottom: 5px; /* Mengurangi jarak antar baris meta */
+}
+
+.see-all-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.see-all-link:hover {
+  text-decoration: underline;
+}
+
+/* === STYLING UNTUK LINK KAMPANYE (DENGAN GARIS BAWAH HIJAU) === */
+
+.campaign-link-underline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+  
+  /* Style Garis Bawah */
+  text-decoration: underline;
+  text-decoration-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  text-decoration-thickness: 2px;
+  /* Jarak antara teks dan garis bawah */
+  text-underline-offset: 4px; 
+
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  display: block; /* Memastikan link berada di barisnya sendiri */
+}
+
+.campaign-link-underline:hover {
+  color: #000; /* Teks sedikit lebih gelap saat hover */
+  text-decoration-color: #333; /* Garis bawah jadi lebih gelap */
+}
+
+/* === STYLING SIARAN PERS CAROUSEL === */
+
+/* Judul "Siaran Pers" */
+/* Judul Section (UMUM) */
+.section-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; 
+  color: #222;
+  border-bottom: 3px solid #222;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Link "See all stories" */
+.news-carousel-section .see-all-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.news-carousel-section .see-all-link:hover {
+  color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  text-decoration: underline;
+}
+
+/* Styling untuk Kartu Artikel */
+.news-card {
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent; /* Tidak ada latar belakang kartu */
+  border: none;
+}
+
+.news-card img {
+  border-radius: 4px;
+  aspect-ratio: 16 / 10; /* Membuat gambar proporsional */
+  object-fit: cover;
+}
+
+.news-card-category {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.news-card-title {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.news-card-title a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  /* === TAMBAHKAN BARIS DI BAWAH INI === */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Atur ke 3 baris */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.news-card-title a:hover {
+  text-decoration: underline;
+}
+
+.news-card-excerpt {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* 👈 TAMBAHKAN BARIS INI */
+  -webkit-box-orient: vertical;
+}
+
+.news-card-meta {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 2px;
+}
+
+/* === STYLING PANAH CAROUSEL BARU (LINGKARAN PUTIH) === */
+
+/* Target kedua tombol panah */
+#siaranPersCarousel .carousel-control-prev,
+#siaranPersCarousel .carousel-control-next {
+    /* 1. Styling Lingkaran */
+    background-color: #ffffff;  /* Latar belakang putih */
+    border-radius: 50%;         /* Membuatnya bulat */
+    width: 45px;                /* Ukuran lingkaran */
+    height: 45px;               /* Ukuran lingkaran */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Efek bayangan */
+    
+    /* 2. Mengatur posisi */
+    top: 50%; /* Menengahkan secara vertikal */
+    transform: translateY(-50%);
+    opacity: 1; /* Pastikan selalu terlihat (tidak fade) */
+
+    /* 3. Menghapus style bawaan Bootstrap */
+    background-image: none; 
+}
+
+/* Atur posisi spesifik panah kiri */
+#siaranPersCarousel .carousel-control-prev {
+    left: -40px; /* Geser sedikit keluar, sesuaikan nilainya */
+}
+
+/* Atur posisi spesifik panah kanan */
+#siaranPersCarousel .carousel-control-next {
+    right: -40px; /* Geser sedikit keluar, sesuaikan nilainya */
+}
+
+/* Target IKON di dalam tombol (panah < dan >) */
+#siaranPersCarousel .carousel-control-prev-icon,
+#siaranPersCarousel .carousel-control-next-icon {
+    /* Menggunakan filter untuk mengubah ikon SVG bawaan Bootstrap menjadi hitam */
+    filter: invert(1); 
+    width: 1.5rem;  /* Ukuran ikon di dalam lingkaran */
+    height: 1.5rem;
+}
+
+/* Menyembunyikan panah di layar HP */
+@media (max-width: 767.98px) {
+  #siaranPersCarousel .carousel-control-prev,
+  #siaranPersCarousel .carousel-control-next {
+    display: none;
+  }
+}
+
+
+/* Padding tambahan untuk carousel inner agar ada ruang di samping */
+@media (min-width: 992px) { /* Hanya berlaku di layar besar */
+  #siaranPersCarousel .carousel-inner {
+    padding-left: 20px;  /* Atur nilai ini sesuai kebutuhan */
+    padding-right: 20px; /* Atur nilai ini sesuai kebutuhan */
+  }
+}
+
+/* === STYLING INDIKATOR CAROUSEL (KOTAK) === */
+#siaranPersCarousel .carousel-indicators button {
+  background-color: #e0e0e0; /* Warna abu-abu muda (non-aktif) */
+  width: 30px;  /* Lebar kotak */
+  height: 8px;  /* Tinggi kotak */
+  border: 0;
+  margin: 0 5px;
+  /* Hapus 'border-radius: 50%' */
+}
+
+#siaranPersCarousel .carousel-indicators .active {
+  background-color: #333; /* Warna hitam/abu tua (aktif) */
+}
+
+/* === MENGATUR POSISI INDIKATOR CAROUSEL AGAR STATIS === */
+
+#siaranPersCarousel .carousel-indicators {
+  position: static;     /* 1. Mengubah dari 'absolut' ke 'statis' */
+  z-index: auto;        /* 2. Menormalkan tumpukan */
+  
+  /* 3. Menghapus offset posisi absolut bawaan Bootstrap */
+  right: auto;
+  bottom: auto;
+  left: auto;
+  
+  /* 4. Memberi jarak (mendorong ke bawah) dari konten di atasnya */
+  margin-top: 2.5rem; 
+  
+  /* 5. Menghapus margin-bottom bawaan */
+  margin-bottom: 0; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* === STYLING SINIAR POPULER & LINK LAINNYA === */
+
+/* Judul "Dengarkan Siniar Lainnya" */
+.siniar-other-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; /* Sedikit lebih kecil dari .section-title */
+  color: #222;
+}
+
+/* Tautan ke YouTube & Spotify */
+.siniar-social-link {
+  display: flex; /* Membuat ikon dan teks berdampingan */
+  align-items: center; /* Menengahkan secara vertikal */
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.siniar-social-link img {
+  width: 50px; /* Ukuran ikon */
+  height: 50px;
+  margin-right: 15px; /* Jarak antara ikon dan teks */
+}
+
+.siniar-social-link:hover {
+  text-decoration: underline;
+}
+
+/* === TOMBOL OUTLINE HIJAU (BRAND) BARU === */
+
+.btn-outline-brand-green {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  border: 2px solid #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  background-color: transparent;
+  border-radius: 8px; /* Dibuat 8px agar sesuai gambar */
+  padding: 12px 28px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-brand-green:hover {
+  background-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  color: #ffffff; /* Teks menjadi putih saat hover */
+  border-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+}
+
+/* === STYLING UNTUK SECTION "KAMU BISA LAKUKAN" === */
+
+.info-card {
+  /* Tidak perlu style khusus pada wrapper card */
+  height: 100%;
+}
+
+.info-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Proporsi gambar, bisa disesuaikan */
+  object-fit: cover;
+  border-radius: 8px; /* Sudut membulat */
+  margin-bottom: 1.5rem; /* Jarak ke teks di bawah */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.info-card-body {
+  padding: 0;
+}
+
+.info-card-title {
+  font-family: 'Barlow', sans-serif; /* Sesuai font judul lain */
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 0.75rem;
+}
+
+.info-card-text {
+  font-family: 'Montserrat', sans-serif; /* Sesuai font paragraf lain */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === STYLING UNTUK GARIS PEMISAH "LANGKAH SELANJUTNYA" === */
+
+hr.step-divider {
+  border: 0;
+  border-top: 2px solid #e0e0e0; /* Garis abu-abu muda */
+  opacity: 1; /* Pastikan terlihat jelas */
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* Jarak dari garis ke judul */
+}
+
+/* === STYLING UNTUK FORMULIR RELAWAN === */
+
+.form-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* Ukuran 32px */
+  color: #222;
+}
+
+.volunteer-form .form-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Mengubah style input field (kotak) */
+.volunteer-form .form-control,
+.volunteer-form .form-select {
+  border: none;
+  border-radius: 0;
+  /* Garis bawah abu-abu */
+  border-bottom: 2px solid #ced4da; 
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent; /* Latar transparan */
+  box-shadow: none; /* Hapus bayangan focus */
+}
+
+/* Style saat input field di-klik (focus) */
+.volunteer-form .form-control:focus,
+.volunteer-form .form-select:focus {
+  border-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  background-color: transparent;
+}
+
+/* Mengubah style checkbox */
+.volunteer-form .form-check-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.volunteer-form .form-check-input {
+  border-color: #888;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.volunteer-form .form-check-input:checked {
+  background-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  border-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+}
+
+/* === STYLING UNTUK INSTAGRAM EMBED === */
+
+/* Wrapper untuk embed Instagram */
+.instagram-media {
+  background: #FFF;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px; /* Sudut membulat */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: block;
+  margin: 1px auto; /* 'auto' untuk center */
+  max-width: 540px;
+  min-width: 326px;
+  padding: 0;
+  width: 100%; /* Lebar responsif */
+}
+
+/* === STYLING UNTUK TESTIMONI (VERSI IMAGE SLIDER) === */
+
+.testimonial-slider-simple {
+  /* Ini sudah benar untuk menghilangkan background putih */
+  padding: 0; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.testimonial-slider-simple .carousel-item img {
+  border-radius: 8px; 
+}
+
+/* === Tombol Panah Navigasi (Bentuk Lingkaran Putih) === */
+.testimonial-control {
+  width: 50px; 
+  height: 50px; 
+  background-color: white; 
+  border-radius: 50%; 
+  opacity: 1; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* HAPUS 'left: 20px;' DARI BLOK INI */
+}
+
+/* === [PERBAIKAN] Atur Posisi Tombol Secara Terpisah === */
+
+/* Atur posisi tombol PREV (kiri) */
+.testimonial-control.carousel-control-prev {
+  left: 20px; /* Beri jarak 20px dari kiri */
+}
+
+/* Atur posisi tombol NEXT (kanan) */
+.testimonial-control.carousel-control-next {
+  right: 20px; /* Beri jarak 20px dari kanan */
+}
+
+
+/* === Ikon Panah (Hitam) === */
+.testimonial-control .carousel-control-prev-icon,
+.testimonial-control .carousel-control-next-icon {
+  filter: invert(1); 
+  width: 25px; 
+  height: 25px; 
+}
+
+
+/* === Penyesuaian untuk mobile === */
+@media (max-width: 991px) {
+  .testimonial-slider-simple {
+    padding: 0; 
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .testimonial-control {
+    display: none; 
+  }
+}
+
+/* === STYLING UNTUK SECTION PERTANYAAN (CTA) === */
+
+/* Mengatur teks di dalam section */
+.cta-pertanyaan-title {
+  text-align: center; /* Membuat teks jadi di tengah */
+  font-weight: 900;   /* Membuat font sangat tebal (black) */
+  color: #000;         /* Mengatur warna teks menjadi hitam */
+  line-height: 1.6;   /* Menambah jarak antar baris jika teksnya wrap */
+}
+
+/* Mengatur link email agar sesuai gambar */
+.underlined-email-link {
+  color: inherit;         /* Mengambil warna teks (hitam) dari induknya */
+  text-decoration: none;  /* Menghapus garis bawah biru default */
+  
+  /* Membuat garis bawah kustom */
+  border-bottom: 3px solid #CCFF00; /* Garis bawah hijau lime tebal */
+  
+  /* Memberi sedikit jarak antara teks email dan garis bawah */
+  padding-bottom: 2px; 
+}
+
+/* === STYLING UNTUK KARTU GRID KAMPANYE === */
+
+.campaign-grid-card {
+  display: flex; /* Kunci agar tombol bisa .mt-auto */
+  flex-direction: column; /* Tumpuk: gambar di atas, konten di bawah */
+  height: 100%; /* Kunci untuk .mt-auto */
+  
+  background-color: #ffffff;
+  border: 1px solid #e9ecef; /* Border abu-abu tipis */
+  border-radius: 8px;
+  overflow: hidden; /* Untuk merapikan gambar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.campaign-grid-card:hover {
+  transform: translateY(-5px); /* Efek angkat */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Bayangan lebih kuat */
+}
+
+.campaign-grid-img {
+  width: 100%;
+  height: 220px; /* Tinggi gambar seragam */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.campaign-grid-card:hover .campaign-grid-img {
+  transform: scale(1.05); /* Efek zoom pada gambar */
+}
+
+/* Konten Kartu (Teks & Tombol) */
+.campaign-grid-content {
+  padding: 1.25rem;
+  /* Kunci untuk .mt-auto di tombol */
+  display: flex; 
+  flex-direction: column;
+  flex-grow: 1; 
+}
+
+.campaign-grid-category {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.campaign-grid-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #212529;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.campaign-grid-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.campaign-grid-card:hover .campaign-grid-title {
+  text-decoration: underline;
+}
+
+.campaign-grid-excerpt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Atur ke 3 baris */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Mengubah tombol di dalam kartu kampanye */
+.campaign-grid-content .btn-sm {
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  align-self: flex-end; /* DIUBAH: Tombol pindah ke kanan */
+}
+
+/* === STYLING UNTUK SECTION PROGRAM MAGANG === */
+
+/* Judul Utama (Program Magang...) */
+.magang-main-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* Ukuran 32px */
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+/* Paragraf utama */
+.magang-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Subjudul (Syarat umum, Apa yang didapat) */
+.magang-subtitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #222;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Daftar list (bullet points) */
+.magang-list {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  padding-left: 20px; /* Indentasi standar */
+}
+
+.magang-list li {
+  margin-bottom: 0.5rem; /* Jarak antar list item */
+}
+
+/* Styling untuk gambar galeri di bawah */
+.gallery-img {
+  width: 100%;
+  height: 250px; /* Tinggi seragam */
+  object-fit: cover; /* Mencegah gambar penyok/distorsi */
+}
+
+/* === STYLING UNTUK SECTION MAGANG BANNER === */
+.magang-banner-section {
+  /* GANTI #2E4F23 DENGAN WARNA HIJAU TUA ANDA */
+  background-color: #2E4F23; 
+  padding: 3rem 0;
+  color: #ffffff;
+}
+
+.magang-banner-icon {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  display: inline-flex; /* Agar pas dengan konten */
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.magang-banner-icon i {
+  font-size: 1.2rem;
+}
+
+.magang-banner-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; /* Ukuran 28px */
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+/* Menyesuaikan tombol .btn-report di banner ini */
+.magang-banner-section .btn-sm {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+/* === STYLING UNTUK ACCORDION FAQ MAGANG (LIGHT) === */
+
+/* Kita gunakan warna #faf9f6 (krem) yang sama
+  dengan latar belakang section formulir Anda.
+*/
+.accordion-light .accordion-item {
+  background-color: #faf9f6;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.accordion-light .accordion-button {
+  background-color: #faf9f6;
+  color: #222; /* Teks hitam */
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700; /* Teks tebal */
+  font-size: 1rem;
+  box-shadow: none;
+}
+
+.accordion-light .accordion-button:not(.collapsed) {
+  color: #222;
+  background-color: #faf9f6;
+  /* Garis pemisah abu-abu tipis saat terbuka */
+  box-shadow: inset 0 -1px 0 #e0e0e0; 
+}
+
+/* Mengganti ikon panah menjadi HITAM */
+.accordion-light .accordion-button::after {
+  /* Ini adalah SVG bawaan Bootstrap, tapi 'fill' diubah jadi '%23212529' (hitam) */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+/* Konten jawaban di latar belakang putih */
+.accordion-light .accordion-body {
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* === STYLING UNTUK SECTION SIGNUP FORMULIR === */
+
+.signup-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* Ukuran 32px */
+  color: #222;
+}
+
+.signup-form .form-label {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Mengubah style input field (kotak) */
+.signup-form .form-control {
+  background-color: #f8f9fa; /* Latar abu-abu muda */
+  border: 1px solid #e0e0e0; /* Border abu-abu */
+  border-radius: 8px; /* Sudut membulat */
+  padding: 0.75rem 1rem; /* Padding di dalam */
+  box-shadow: none; /* Hapus bayangan focus */
+  transition: border-color 0.3s ease;
+}
+
+.signup-form .form-control:focus {
+  background-color: #ffffff; /* Latar jadi putih saat diklik */
+  border-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.25); /* Efek glow hijau */
+}
+
+/* === STYLING LINGKARAN IKON KAMPANYE === */
+
+.campaign-icon-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Membuat lingkaran */
+  
+  /* Latar belakang hijau */
+  background-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  
+  /* Bayangan & Border (agar mirip style gambar sebelumnya) */
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  
+  /* Untuk menengahkan ikon di dalam lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Jarak ke teks di bawahnya */
+  margin: 0 auto 20px auto; 
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mengatur warna ikon di dalam lingkaran */
+.campaign-icon-circle i {
+  color: #ffffff; /* Ikon warna putih */
+  /* fa-3x di HTML mengatur ukuran ikon */
+}
+
+/* Efek hover (sama seperti sebelumnya) */
+.campaign-icon-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* === STYLING UNTUK LAPORAN KEUANGAN === */
+
+.laporan-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* Ukuran 40px */
+  color: #222;
+  text-align: left;
+}
+
+.laporan-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+/* Item Laporan (Ikon & Link) */
+.report-download-item {
+  transition: all 0.3s ease;
+  /* Tambahkan ini untuk memastikan transform bekerja dari tengah */
+  transform-origin: center center; 
+}
+
+.report-item-icon { /* <-- DIUBAH DARI .report-download-icon */
+  color: #222; 
+  margin-bottom: 1.5rem;
+
+  /* TAMBAHAN: Atur ukuran SVG agar sama besar */
+  width: 80px;
+  height: 80px;
+
+  transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.report-download-link {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #222;
+  text-decoration: none; /* Pastikan tidak ada garis bawah default */
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* === Efek Hover yang Diperbarui === */
+
+.report-download-item:hover .report-item-icon { /* <-- DIUBAH DARI .report-download-icon */
+  transform: scale(1.1); 
+}
+
+/* === STYLING UNTUK SECTION PENGGALANGAN DANA === */
+
+/* Judul Section (Anda mungkin sudah punya .section-title) */
+.section-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Kustomisasi Kartu Bootstrap */
+.fundraising-section .card {
+  border: none; /* Menghilangkan border default */
+  border-radius: 8px; /* Sudut membulat (opsional) */
+}
+
+/* Pastikan gambar di dalam kartu rata di atas */
+.fundraising-section .card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  object-fit: cover; /* Memastikan gambar mengisi area */
+  height: 200px; /* Atur tinggi gambar agar seragam */
+}
+
+.fundraising-section .card-body {
+  padding: 1.5rem; /* Padding di dalam kotak teks */
+}
+
+/* Teks Kategori (Gabung) */
+.fundraising-card-category {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+/* Judul Kartu */
+.fundraising-card-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  color: #222;
+  font-size: 1.2rem; /* Sedikit lebih besar */
+  margin-bottom: 0.75rem;
+}
+
+/* Teks Deskripsi Kartu */
+.fundraising-card-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* 👈 TAMBAHKAN BARIS INI */
+  -webkit-box-orient: vertical;
+}
+
+/* Tombol Kuning "Ikut Beraksi" */
+.btn-aksi {
+  background-color: #FFD600; /* Warna kuning (sesuai perkiraan) */
+  color: #222; /* Teks hitam */
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  align-self: flex-start; /* Membuat tombol tidak memanjang full-width */
+}
+
+.btn-aksi:hover {
+  background-color: #FBC02D; /* Warna kuning sedikit lebih gelap */
+  color: #222;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-2px); /* Efek sedikit terangkat */
+}
+
+/* === STYLING UNTUK SECTION KEGIATAN DONATUR === */
+
+/* Teks Deskripsi */
+.kegiatan-donatur-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Kustomisasi Slider */
+.donatur-slider {
+  border-radius: 8px; /* Memberi sudut membulat pada slider */
+  overflow: hidden; /* Merapikan sudut agar gambar juga membulat */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08); /* Shadow tipis */
+}
+
+/* Pastikan gambar di dalamnya juga membulat */
+.donatur-slider .carousel-item img {
+  border-radius: 8px;
+}
+
+/* Teks Caption di bawah gambar */
+.image-caption {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-top: 1rem; /* Beri jarak dari slider */
+  text-align: center;
+}
+
+/* === STYLING UNTUK DONASI HERO (STYLE BARU) === */
+
+.donasi-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Memberi ketinggian (80% dari tinggi layar) */
+  padding: 5rem 0; /* Jarak atas/bawah */
+  
+  /* GANTI '...' DENGAN PATH GAMBAR LATAR ANDA */
+  background-image: url('../asset/image/halaman-donasi-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  /* Flexbox untuk menengahkan formulir secara vertikal */
+  display: flex;
+  align-items: center;
+}
+
+/* Overlay Gelap */
+.donasi-hero-overlay {
+  content: "";
+  position: absolute;
+  inset: 0; /* (top: 0, left: 0, right: 0, bottom: 0) */
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1; /* Di bawah konten */
+}
+
+/* Kontainer Bootstrap harus di atas overlay */
+.donasi-hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* KOTAK FORMULIR PUTIH (Isinya sama seperti sebelumnya) */
+.donation-form-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.donation-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; /* 28px */
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.donation-subtitle,
+.donation-note {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Toggle Bulanan / Satu Kali */
+.btn-freq-group {
+  width: 100%;
+}
+.btn-freq {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  width: 50%;
+  border: 1px solid #ced4da;
+  color: #555;
+  background-color: #f8f9fa; /* Latar abu-abu */
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+.btn-freq.active,
+.btn-check:checked + .btn-freq {
+  background-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+  color: #ffffff;
+  border-color: #4CAF50; /* GANTI DENGAN WARNA HIJAU UTAMA ANDA */
+}
+
+/* === Tombol Nominal Donasi (PERBAIKAN) === */
+
+/* 1. State Default (Tombol Putih) */
+.btn-amount-option {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  text-align: left;
+  box-shadow: none; /* Pastikan tidak ada shadow di awal */
+  /* Tambahkan transisi untuk semua properti */
+  transition: all 0.2s ease; 
+}
+
+/* 2. State ACTIVE (Tombol Hijau setelah diklik) */
+.btn-amount-option.active {
+  background-color: #4CAF50; /* Ganti dengan warna hijau Anda */
+  color: #ffffff;
+  border-color: #4CAF50; /* Ganti dengan warna hijau Anda */
+  box-shadow: none; /* Tidak perlu shadow saat aktif */
+}
+
+/* 3. State HOVER (Hanya Shadow saat disentuh) */
+/* Kita gunakan :not(.active) agar tombol hijau tidak berkedip */
+.btn-amount-option:not(.active):hover {
+  background-color: #f8f9fa; /* Pastikan background tetap putih/abu */
+  color: #333;           /* Pastikan teks tetap hitam */
+  border-color: #ced4da;  /* Pastikan border tetap */
+  
+  /* Ini adalah efek yang Anda inginkan */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Efek shadow */
+  transform: translateY(-2px); /* Efek terangkat */
+}
+
+/* Teks Keamanan (Lock) */
+.security-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: #777;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+.security-text i {
+  margin-right: 0.25rem;
+}
+
+/* === STYLING TAMBAHAN UNTUK DONASI === */
+
+/* Style untuk tombol "DONASI SEKARANG" versi ORANYE */
+/* Kita gunakan class .style-orange yang akan ditambah/dihapus oleh JS */
+.cta-submit-btn.style-orange {
+  /* Ganti warna kuning default menjadi oranye */
+  background-color: #f77d00; /* Perkiraan warna oranye dari gambar */
+  color: #ffffff;
+}
+
+.cta-submit-btn.style-orange:hover {
+  background-color: #e67300; /* Oranye sedikit lebih gelap */
+  color: #ffffff;
+}
+
+/* * Style untuk tombol nominal "Satu Kali"
+ * (horizontal 3 kolom) 
+*/
+.amount-options-row {
+  /* Menggunakan CSS Grid untuk 3 kolom yang rapi */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem; /* Jarak antar tombol */
+}
+
+/* Style untuk tombol "Jumlah Lain" yang full-width */
+.amount-options-other {
+  margin-top: 0.5rem;
+}
+
+/* Memastikan tombol di layout baru rata tengah */
+.amount-options-row .btn-amount-option {
+  text-align: center;
+}
+
+/* === STYLING TAMBAHAN UNTUK DONASI === */
+
+/* Style untuk tombol "DONASI SEKARANG" versi ORANYE */
+.cta-submit-btn.style-orange {
+  background-color: #f77d00; /* Warna oranye */
+  color: #ffffff;
+}
+
+.cta-submit-btn.style-orange:hover {
+  background-color: #e67300; /* Oranye lebih gelap */
+  color: #ffffff;
+}
+
+/* * Style untuk layout "Satu Kali" (Tombol 3 Kolom) 
+ */
+.amount-options-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 kolom sama lebar */
+  gap: 0.5rem; /* Jarak antar tombol */
+}
+
+/* Teks di 3 tombol atas = Rata Tengah */
+.amount-options-row .btn-amount-option {
+  text-align: center;
+}
+
+/* Style untuk tombol "Jumlah Lain" di bawahnya */
+.amount-options-other {
+  margin-top: 0.5rem;
+}
+
+/* Teks di tombol "Jumlah Lain" = Rata Tengah */
+.amount-options-other .btn-amount-option {
+  text-align: center;
+}
+
+/* === STYLING UNTUK INPUT "Rp" === */
+
+#custom-amount-prefix {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  /* Pastikan warna background sama dengan tombol */
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+}
+
+/* Pastikan inputnya rata kanan */
+#custom-amount-input {
+  text-align: left;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Style focus kustom (opsional) */
+#custom-amount-input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+  position: relative;
+  z-index: 2; /* Pastikan border focus terlihat di atas prefix */
+}
+
+/* === STYLING UNTUK SECTION INFO AKSI === */
+
+/* Kotak Gambar di Kiri */
+.image-action-box {
+  position: relative;
+  /* Ganti dengan path gambar Anda */
+  background-image: url('asset/image/halaman-donasi-hero.jpg'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 500px; /* Beri ketinggian minimum */
+  border-radius: 8px;
+  overflow: hidden; /* Rapikan sudut */
+  
+  /* Flexbox untuk memposisikan teks di bawah */
+  display: flex;
+  align-items: flex-end; /* Teks rata bawah */
+  padding: 2rem;
+}
+
+/* Gradient Overlay untuk menggelapkan bagian bawah gambar */
+.image-action-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+}
+
+/* Judul Teks di atas Gambar */
+.image-action-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Bayangan agar terbaca */
+  position: relative;
+  z-index: 2; /* Pastikan di atas gradient */
+  margin-bottom: 0;
+}
+
+/* Kotak Teks di Kanan */
+.text-action-box {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.text-action-box .action-info-text {
+  font-weight: 600; /* Sedikit tebal */
+  font-size: 1rem;
+}
+
+/* === Kustomisasi Akordion (Agar seperti di gambar) === */
+.custom-accordion {
+  --bs-accordion-border-width: 0; /* Hapus border default */
+  --bs-accordion-btn-padding-x: 0; /* Hapus padding samping */
+  --bs-accordion-btn-padding-y: 1rem;
+  --bs-accordion-body-padding-x: 0;
+  --bs-accordion-body-padding-y: 1rem;
+}
+
+.custom-accordion .accordion-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #0d6efd; /* Warna link biru */
+  background-color: transparent;
+}
+
+/* Hapus box shadow saat diklik */
+.custom-accordion .accordion-button:not(.collapsed),
+.custom-accordion .accordion-button:focus {
+  box-shadow: none;
+  background-color: transparent;
+  color: #0d6efd;
+}
+
+/* Ganti ikon panah default (chevron) */
+.custom-accordion .accordion-button::after {
+  display: none; /* Sembunyikan ikon default */
+}
+
+/* Tambahkan ikon panah kustom (segitiga) */
+.custom-accordion .accordion-button::before {
+  content: '▸'; /* Karakter segitiga */
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+/* Putar ikon panah saat terbuka */
+.custom-accordion .accordion-button:not(.collapsed)::before {
+  transform: rotate(90deg);
+}
+
+/* Beri indentasi pada isi akordion */
+.custom-accordion .accordion-body {
+  padding-left: 1.5rem; /* Rata dengan teks judul */
+}
+
+.custom-accordion .accordion-body ol {
+  padding-left: 1.2rem; /* Indentasi untuk list */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* === STYLING UNTUK FAQ FLIP CARD === */
+
+/* Judul Section (Mengambil style dari gambar) */
+.faq-section-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  color: #002B49; /* Biru tua dari teks judul */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* 1. Kontainer luar - Menyiapkan 3D space */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 350px; /* Anda HARUS menetapkan tinggi kartu */
+  perspective: 1000px; /* Efek 3D */
+}
+
+/* 2. Kontainer dalam - Ini yang akan berputar */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg); /* <--- MENJADI X */
+}
+
+/* 4. Sisi Depan dan Belakang (diposisikan menumpuk) */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Sembunyikan sisi belakang */
+  backface-visibility: hidden;
+  border-radius: 8px;
+  
+  /* Styling konten di dalam kartu */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* 5. Styling Sisi DEPAN (Hijau) */
+.flip-card-front {
+  background-color: #1DB99A; /* Warna hijau dari gambar */
+  color: white;
+}
+
+.flip-icon {
+  font-size: 3.5rem; /* 56px */
+  margin-bottom: 1.5rem;
+}
+
+.flip-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+/* 6. Styling Sisi BELAKANG (Biru) */
+.flip-card-back {
+  background-color: #3F4E9F; /* Warna biru dari gambar */
+  color: white;
+  transform: rotateX(180deg); /* Balik sisi belakang */
+}
+
+.flip-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btn-flip {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-flip:hover {
+  background-color: white;
+  color: #3F4E9F; /* Warna biru */
+}
+
+/* === STYLING UNTUK SECTION PROFIL TESTIMONI === */
+
+/* Gambar Profil */
+.testimonial-profile-img {
+  width: 100%;
+  height: 320px; /* Tetapkan tinggi agar semua gambar seragam */
+  object-fit: cover; /* Memotong gambar agar pas tanpa distorsi */
+  object-position: center; /* Fokus di tengah gambar */
+  border-radius: 8px; /* Sudut membulat seperti di gambar */
+  margin-bottom: 1rem;
+}
+
+/* Nama Profil */
+.testimonial-profile-name {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem; /* 18px */
+  color: #222;
+  margin-bottom: 0.75rem;
+}
+
+/* Teks Testimoni */
+.testimonial-profile-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem; /* 14px-15px */
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === STYLING UNTUK SECTION STATISTIK === */
+
+.stats-section-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* 40px */
+  color: #333;
+  line-height: 1.2;
+}
+
+.stats-section-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.stats-section-text strong {
+  color: #222;
+}
+
+.stat-number {
+  font-family: 'Barlow', sans-serif;
+  /* Gunakan font-weight tipis untuk efek seperti di gambar */
+  font-weight: 300; 
+  font-size: 4.5rem; /* 72px */
+  color: #005f9e; /* Warna biru */
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #222;
+  letter-spacing: 1px; /* Sedikit jarak antar huruf */
+}
+
+/* Kotak CTA di Bawah */
+.stat-cta-box {
+  margin-top: 4rem; /* Beri jarak dari statistik */
+}
+
+.stat-cta-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #005f9e; /* Warna biru */
+}
+
+.stat-cta-email {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #555;
+}
+
+.stat-cta-email a {
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+}
+
+.stat-cta-email a:hover {
+  color: #005f9e;
+  border-bottom-color: #005f9e;
+}
+
+/* =================================
+   STYLING OFFCANVAS MOBILE MENU (v3 - SPLIT CLICK)
+   ================================= */
+
+/* Header Offcanvas */
+#mobileMenu .offcanvas-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#mobileMenu .offcanvas-header .logo-mobile-menu {
+    height: 28px;
+    width: auto;
+}
+
+#mobileMenu .offcanvas-header .btn-close {
+    font-size: 1rem;
+    padding: 0;
+}
+#mobileMenu .offcanvas-header .btn-close:focus {
+    box-shadow: none;
+}
+
+
+/* Main link (seperti "Home") */
+#mobileMenu .mobile-nav-item .nav-link-top {
+    display: block;
+    padding: 1rem 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #212529;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+}
+#mobileMenu .mobile-nav-item .nav-link-top:hover {
+    background-color: #f8f9fa;
+}
+
+
+/* === STYLE BARU UNTUK SPLIT BUTTON === */
+
+#mobileMenuAccordion .accordion-item {
+    border: none; /* Hapus border default */
+    border-bottom: 1px solid #f0f0f0; /* Beri border tipis pemisah */
+}
+
+/* 1. Wrapper (Header) */
+.custom-split-header {
+    display: flex;
+    justify-content: space-between; /* Pisahkan link dan tombol */
+    align-items: center;
+    padding: 0; /* Hapus padding default h2 */
+    background-color: #ffffff; /* Latar belakang putih */
+}
+
+/* 2. Link Teks (Navigasi) */
+.nav-link-split {
+    flex-grow: 1; /* Ambil sisa ruang */
+    padding: 1rem 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #212529 !important;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+.nav-link-split:hover {
+    background-color: #f8f9fa;
+}
+
+/* 3. Tombol Panah (Toggle) */
+.accordion-toggle-split {
+    flex-shrink: 0; /* Jangan menyusut */
+    width: 50px; /* Lebar area klik */
+    height: 50px; /* Tinggi area klik */
+    border: none;
+    background-color: transparent;
+    position: relative; /* Untuk posisi pseudo-element ::after */
+    padding: 0;
+    box-shadow: none;
+}
+
+/* 4. Ikon Panah (disalin dari style .accordion-button::after) */
+.accordion-toggle-split::after {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 auto; /* Posisikan di tengah tombol */
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    transition: transform 0.2s ease-in-out;
+    
+    /* Ikon panah bawah (hitam) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+/* 5. Ikon Panah saat Terbuka (rotated) */
+.accordion-toggle-split:not(.collapsed)::after {
+    /* Ikon panah atas (hitam) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3e%3c/svg%3e") !important;
+    transform: none; /* Hapus transform rotate default */
+}
+
+/* 6. Hilangkan outline/shadow aneh saat tombol diklik */
+.accordion-toggle-split:focus {
+    box-shadow: none;
+    border: none;
+}
+
+/* 7. Latar belakang saat area submenu terbuka */
+.custom-split-header:has(.accordion-toggle-split:not(.collapsed)) {
+    background-color: #f8f9fa; /* Latar abu-abu muda */
+}
+
+/* === AKHIR STYLE BARU === */
+
+/* Sub-menu (Link di dalam accordion) */
+#mobileMenuAccordion .accordion-body {
+    padding: 0;
+    background-color: #fdfdfd;
+    opacity: 1; /* <-- TAMBAHKAN BARIS INI */
+}
+
+#mobileMenuAccordion .accordion-collapse.show .accordion-body {
+    animation: none; /* <-- TAMBAHKAN BLOK BARU INI */
+}
+
+#mobileMenuAccordion .accordion-body .dropdown-item {
+    padding: 0.75rem 1.25rem 0.75rem 2.25rem; /* Beri indentasi kiri */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+#mobileMenuAccordion .accordion-body .dropdown-item:last-child {
+    border-bottom: none;
+}
+
+/* Styling untuk item aktif (seperti "Tim Indonesia" di gambar) */
+#mobileMenuAccordion .accordion-body .dropdown-item.active,
+#mobileMenuAccordion .accordion-body .dropdown-item:hover {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-left: 4px solid #8BC34A; /* Warna hijau GreenWave-mu */
+    padding-left: calc(2.25rem - 4px); /* Sesuaikan padding agar teks tetap lurus */
+}
+
+.logo-mobile-offcanvas {
+  height: 40px; /* Sesuaikan tinggi logo di offcanvas jika perlu */
+  width: auto;
+}
+
+/* =================================
+   STYLING SECTION ABOUT (RESPONSIVE)
+   ================================= */
+
+/* 1. Atur ukuran DESKTOP (menggantikan style inline yg dihapus) */
+#about h2 {
+  font-size: 2.8rem;
+}
+
+#about p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  /* Kita batasi juga lebarnya di desktop agar lebih rapi */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2. Atur ukuran MOBILE (sesuai permintaan) */
+@media (max-width: 767.98px) {
+  
+  #about h2 {
+    font-size: 2rem; /* Ukuran H2 mobile (lebih kecil) */
+    line-height: 1.3;
+  }
+  
+  #about p {
+    font-size: 1rem; /* Ukuran paragraf mobile (lebih kecil) */
+    line-height: 1.6;
+  }
+  
+  /* Ini untuk mengecilkan gambar lingkaran */
+  .campaign-link-image {
+    width: 100px; /* Ukuran gambar mobile (dari 130px) */
+    height: 100px; /* Ukuran gambar mobile (dari 130px) */
+  }
+
+  /* Bonus: Kecilkan juga teks di bawah gambar */
+  .campaign-link-title {
+    font-size: 0.9rem; 
+  }
+}

@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenWave - Makes Life Better!</title>
+
+  <link rel="icon" href="../asset/image/logo-mini-16x16.png" type="image/png">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top scrolled">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <i class="fas fa-bars fs-4 text-dark"></i>
+    </button>
+
+    <a class="navbar-brand mx-auto" href="../index.html">
+      <img src="../asset/image/logo-rev-copy.png" alt="GreenWave Logo" class="logo-main">
+    </a>
+
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start mt-3 mt-lg-0">
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../tentang-kami.html" role="button">Tentang Kami</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-1/tim-kami.html">Tim Kami</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/laporan-tahunan.html">Laporan Tahunan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/pekerjaan.html">Pekerjaan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-1/faq.html">Pertanyaan Umum</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../fokus-kerja.html" role="button">Fokus Kerja</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-2/hutan.html">Hutan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/iklim.html">Iklim & Energi</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/laut.html">Laut</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/kota.html">Perkotaan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-2/masa-depan.html">Masa Depan Alternatif</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../kabar-terbaru.html" role="button">Kabar Terbaru</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="siaran-pers.html">Siaran Pers</a></li>
+            <li><a class="dropdown-item" href="cerita.html">Cerita</a></li>
+            <li><a class="dropdown-item" href="riset.html">Riset</a></li>
+            <li><a class="dropdown-item" href="kemenangan.html">Kemenangan</a></li>
+            <li><a class="dropdown-item" href="siniar.html">Siniar</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="../mari-beraksi.html" role="button">Mari Beraksi</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="../sub-menu-4/bergabung-relawan.html">Bergabung Relawan</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-4/petisi.html">Petisi</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-4/magang.html">Magang</a></li>
+            <li><a class="dropdown-item" href="../sub-menu-4/berlangganan-informasi.html">Berlangganan Informasi</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a href="../donasi.html" class="btn btn-donasi">Donasi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-sub-nav d-lg-none">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="../tentang-kami.html">Tentang Kami</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../fokus-kerja.html">Fokus Kerja</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../kabar-terbaru.html">Kabar Terbaru</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../mari-beraksi.html">Mari Beraksi</a> </li>
+    </ul>
+</div>
+
+<!-- OFF Canvas Mobile Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  
+  <div class="offcanvas-header">
+    <a href="#">
+        <img src="../asset/image/logo-mini.png" alt="GreenWave Logo" class="logo-mobile-offcanvas">
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body d-flex flex-column p-0">
+    
+    <div class="accordion accordion-flush mobile-nav-accordion" id="mobileMenuAccordion">
+      
+      <div class="mobile-nav-item">
+        <a href="../index.html" class="nav-link-top">Home</a>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingOne">
+          <a href="../tentang-kami.html" class="nav-link-split">
+            Tentang Kami
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-1/tim-kami.html" class="dropdown-item">Tim Kami</a>
+            <a href="../sub-menu-1/laporan-tahunan.html" class="dropdown-item">Laporan Tahunan</a>
+            <a href="../sub-menu-1/pekerjaan.html" class="dropdown-item">Pekerjaan</a>
+            <a href="../sub-menu-1/faq.html" class="dropdown-item">Pertanyaan Umum</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingTwo">
+          <a href="../fokus-kerja.html" class="nav-link-split">
+            Fokus Kerja
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-2/hutan.html" class="dropdown-item">Hutan</a>
+            <a href="../sub-menu-2/iklim.html" class="dropdown-item">Iklim & Energi</a>
+            <a href="../sub-menu-2/laut.html" class="dropdown-item">Laut</a>
+            <a href="../sub-menu-2/kota.html" class="dropdown-item">Perkotaan</a>
+            <a href="../sub-menu-2/masa-depan.html" class="dropdown-item">Masa Depan Alternatif</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingThree">
+          <a href="../kabar-terbaru.html" class="nav-link-split">
+            Kabar Terbaru
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="siaran-pers.html" class="dropdown-item">Siaran Pers</a>
+            <a href="cerita.html" class="dropdown-item">Cerita</a>
+            <a href="riset.html" class="dropdown-item">Riset</a>
+            <a href="kemenangan.html" class="dropdown-item">Kemenangan</a>
+            <a href="siniar.html" class="dropdown-item">Siniar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingFour">
+          <a href="../mari-beraksi.html" class="nav-link-split">
+            Mari Beraksi
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="../sub-menu-4/bergabung-relawan.html" class="dropdown-item">Bergabung Relawan</a>
+            <a href="../sub-menu-4/petisi.html" class="dropdown-item">Petisi</a>
+            <a href="../sub-menu-4/magang.html" class="dropdown-item">Magang</a>
+            <a href="../sub-menu-4/berlangganan-informasi.html" class="dropdown-item">Berlangganan Informasi</a>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+    <div class="mt-auto p-3">
+      <a href="../donasi.html" class="btn btn-donasi w-100">
+          Donasi
+      </a>
+    </div>
+    
+  </div> </div>
+
+<section class="join-us-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+        <div class="col-lg-6 join-text-content">
+            <h1>
+                <span class="highlight-bg">Perjuangan yang Belum Usai</span>
+            </h1>
+            <p>
+                Selama bertahun-tahun, GreenWave telah berperan aktif dalam menciptakan perubahan yang signifikan bagi lingkungan. Kemenangan ini adalah hasil kerja keras bersama, sebuah bukti bahwa upaya kolektif dapat melawan ancaman krisis iklim dan perusakan ekosistem.
+            </p>
+        </div>
+
+      <div class="col-lg-6 join-image-content">
+        <img src="../asset/image/kemenangan-hero.jpg" alt="Kemenangan Greenwave" class="join-image img-fluid">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="news-static-section py-5">
+  <div class="container">
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="section-title mb-0">Kemenangan Terbaru</h2>
+      <a href="#" class="see-all-link">See all stories ></a>
+    </div>
+
+    <div class="row g-4">
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="news-card">
+          <a href="#"><img src="../asset/image/suku-knasaimos.jpg" alt="Perjuangan Orang Knasalmos" class="img-fluid mb-3"></a>
+          <p class="news-card-category">Hutan</p>
+          <h5 class="news-card-title"><a href="#">17 Tahun Menyaksikan Perjuangan Orang Knasaimos Menjaga Hutan Adat Papua</a></h5>
+          <p class="news-card-excerpt">Cerita juru kampanye hutan Greenwave Indonesia tentang pengalamannya menyaksikan perjuangan masyarakat...</p>
+          <p class="news-card-meta">Amos Sumbung</p>
+          <p class="news-card-meta">8 Juni 2024</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="news-card">
+          <a href="#"><img src="../asset/image/story-2.jpeg" alt="Warga Pesisir Menang" class="img-fluid mb-3"></a>
+          <p class="news-card-category">Ciptakan Perubahan</p>
+          <h5 class="news-card-title"><a href="#">Warga Pesisir dan Pulau-Pulau Kecil Menang,MK Menolak Gugatan PT Gema Kreasi Perdana untuk Merevisi UU PWP3K</a></h5>
+          <p class="news-card-excerpt">Mahkamah Konstitusi (MK) yang menolak Uji Materi (Judicial Review) Undang-Undang Pengelolaan Wilayah...</p>
+          <p class="news-card-meta">GreenWave Indonesia</p>
+          <p class="news-card-meta">21 Maret 2024</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="news-card">
+          <a href="#"><img src="../asset/image/kemenangan-img-1.jpg" alt="ASEAN Deklarasi" class="img-fluid mb-3"></a>
+          <p class="news-card-category">Ciptakan Perubahan</p>
+          <h5 class="news-card-title"><a href="#">Pertama dalam Sejarah, ASEAN Deklarasikan Pelindungan Awak Kapal Migran</a></h5>
+          <p class="news-card-excerpt">Deklarasi ASEAN tentang Penempatan dan Perlindungan Nelayan Migran seharusnya menjadi batu loncatan unt...</p>
+          <p class="news-card-meta">GreenWave Indonesia</p>
+          <p class="news-card-meta">12 Mei 2023</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="news-card">
+          <a href="#"><img src="../asset/image/kemenangan-img-2.jpg" alt="Gugatan Polusi Udara" class="img-fluid mb-3"></a>
+          <p class="news-card-category">Ciptakan Perubahan</p>
+          <h5 class="news-card-title"><a href="#">Warga Kembali Menangkan Banding atas Gugatan Polusi Udara</a></h5>
+          <p class="news-card-excerpt">Pengadilan Tinggi kuatkan putusan hakim yang perintahkan Presiden, para Menteri dan kepala daerah untuk seger...</p>
+          <p class="news-card-meta">Koalisi IBUKOTA</p>
+          <p class="news-card-meta">21 Oktober 2022</p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+</section>
+
+<section class="kemenangan-lainnya-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="section-title mb-0">Kemenangan Lainnya</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <div class="accordion accordion-victories" id="accordionKemenangan">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2018">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2018" aria-expanded="true" aria-controls="collapse2018">
+                2018
+              </button>
+            </h2>
+            <div id="collapse2018" class="accordion-collapse collapse show" aria-labelledby="heading2018" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Menteri ESDM Ignasius Jonan mengumumkan penghentian pembangunan PLTU baru di jaringan Jawa-Bali</li>
+                  <li>Presiden Jokowi mengeluarkan moratorium izin perkebunan sawit, HTI, dan pertambangan</li>
+                  <li>Wilmar, perusahaan kelapa sawit besar, mengumumkan kebijakan nol deforestasi</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2017">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2017" aria-expanded="false" aria-controls="collapse2017">
+                2017
+              </button>
+            </h2>
+            <div id="collapse2017" class="accordion-collapse collapse" aria-labelledby="heading2017" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Izin operasi tambang PT Mikgro Metal Perdana di Pulau Bangka dicabut oleh Kementerian ESDM</li>
+                  <li>Bank HSBC menerapkan kebijakan global nol deforestasi, gambut, dan eksploitasi, terutama dalam pendanaan perusahaan sawit</li>
+                  <li>Masyarakat Kampung Manggroholo dan Sira, Papua Barat, memperoleh izin pengelolaan Hutan Desa setelah hampir satu dekade berjuang</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2016">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2016" aria-expanded="false" aria-controls="collapse2016">
+                2016
+              </button>
+            </h2>
+            <div id="collapse2016" class="accordion-collapse collapse" aria-labelledby="heading2016" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Pemerintah resmi mengakui hak atas hutan adat, memberikan SK kepada sembilan komunitas masyarakat hukum adat</li>
+                  <li>Koalisi Melawan Limbah memenangkan gugatan di PTUN Bandung terhadap izin pembuangan limbah cair PT Kahatex, PT Insan Sandang, dan PT Five Star</li>
+                  <li> Indonesia meratifikasi Kesepakatan Paris dan menargetkan penurunan emisi sebesar 29% (41% dengan bantuan internasional)</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2015">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2015" aria-expanded="false" aria-controls="collapse2015">
+                2015
+              </button>
+            </h2>
+            <div id="collapse2015" class="accordion-collapse collapse" aria-labelledby="heading2015" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>APRIL, salah satu perusahaan kertas besar, mengumumkan kebijakan mengakhiri deforestasi di Indonesia</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2013">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2013" aria-expanded="false" aria-controls="collapse2013">
+                2013
+              </button>
+            </h2>
+            <div id="collapse2013" class="accordion-collapse collapse" aria-labelledby="heading2013" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Asia Pulp and Paper mengumumkan Kebijakan Konservasi Hutan untuk tidak melakukan ekspansi industri di hutan dan lahan gambut</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2011">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2011" aria-expanded="false" aria-controls="collapse2011">
+                2011
+              </button>
+            </h2>
+            <div id="collapse2011" class="accordion-collapse collapse" aria-labelledby="heading2011" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Golden Agri Resources, anak perusahaan Sinar Mas, berkomitmen mengubah praktik perkebunan dan melindungi hutan</li>
+                  <li>Presiden Yudhoyono mengumumkan moratorium konsesi baru di hutan dan lahan gambut serta hutan bernilai konservasi tinggi selama dua tahun</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2010">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2010" aria-expanded="false" aria-controls="collapse2010">
+                2010
+              </button>
+            </h2>
+            <div id="collapse2010" class="accordion-collapse collapse" aria-labelledby="heading2010" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Perusahaan multinasional seperti Unilever dan Nestle berkomitmen untuk menolak membeli minyak sawit dari perusahaan yang merusak hutan dan lahan gambut</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2009">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2009" aria-expanded="false" aria-controls="collapse2009">
+                2009
+              </button>
+            </h2>
+            <div id="collapse2009" class="accordion-collapse collapse" aria-labelledby="heading2009" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Presiden Yudhoyono mencabut rencana pembangunan PLTN dan beralih ke pengembangan energi terbarukan</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2008">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2008" aria-expanded="false" aria-controls="collapse2008">
+                2008
+              </button>
+            </h2>
+            <div id="collapse2008" class="accordion-collapse collapse" aria-labelledby="heading2008" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Setelah aksi besar-besaran, Unilever mendukung moratorium penghentian pembalakan hutan untuk perkebunan sawit di Indonesia</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2007">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2007" aria-expanded="false" aria-controls="collapse2007">
+                2007
+              </button>
+            </h2>
+            <div id="collapse2007" class="accordion-collapse collapse" aria-labelledby="heading2007" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Ulama Jawa dan Madura mengeluarkan fatwa haram untuk pembangunan PLTN di Indonesia</li>
+                  <li>GreenWave meluncurkan Jeepney bertenaga listrik di Filipina untuk mengurangi penggunaan bahan bakar fosil</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2006">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2006" aria-expanded="false" aria-controls="collapse2006">
+                2006
+              </button>
+            </h2>
+            <div id="collapse2006" class="accordion-collapse collapse" aria-labelledby="heading2006" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Tekanan publik berhasil membuat ADB mengalirkan dana $1 miliar untuk proyek energi bersih</li>
+                  <li>Perlawanan masyarakat berhasil menghentikan proyek penambangan batubara di Isabela, Filipina</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2005">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2005" aria-expanded="false" aria-controls="collapse2005">
+                2005
+              </button>
+            </h2>
+            <div id="collapse2005" class="accordion-collapse collapse" aria-labelledby="heading2005" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Pulau Mindoro di Filipina menetapkan area bebas rekayasa genetik</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2004">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2004" aria-expanded="false" aria-controls="collapse2004">
+                2004
+              </button>
+            </h2>
+            <div id="collapse2004" class="accordion-collapse collapse" aria-labelledby="heading2004" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>GreenWave mendorong penerapan kontrol ketat pada industri penghancuran kapal beracun</li>
+                  <li>Perlindungan satwa seperti paus Minke dan pohon merbau diterapkan dalam konvensi CITES di Bangkok</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2002">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2002" aria-expanded="false" aria-controls="collapse2002">
+                2002
+              </button>
+            </h2>
+            <div id="collapse2002" class="accordion-collapse collapse" aria-labelledby="heading2002" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Thailand mewajibkan label pada produk makanan yang terkontaminasi rekayasa genetik</li>
+                  <li>GreenWave berhasil mencegah pembangunan PLTU batu bara di Bo Nok dan Ban Krut, Thailand</li>
+                </ul>
+              </div>
+            </div>
+          </div> <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2001">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2001" aria-expanded="false" aria-controls="collapse2001">
+                2001
+              </button>
+            </h2>
+            <div id="collapse2001" class="accordion-collapse collapse" aria-labelledby="heading2001" data-bs-parent="#accordionKemenangan">
+              <div class="accordion-body">
+                <ul class="victory-list">
+                  <li>Filipina memberlakukan UU pengelolaan sampah yang memandatkan daur ulang dan pemisahan limbah</li>
+                </ul>
+              </div>
+            </div>
+          </div> </div> </div> </div> </div> 
+</section>
+
+<section class="back-link-section">
+  <div class="container">
+    <a href="../kabar-terbaru.html" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left back-link-icon" 
+           width="24" height="24" viewBox="0 0 24 24" 
+           stroke-width="3" stroke="currentColor" fill="none" 
+           stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 12l14 0" />
+        <path d="M5 12l6 6" />
+        <path d="M5 12l6 -6" />
+      </svg>
+      Kabar Terbaru
+    </a>
+  </div>
+</section>
+
+<!-- === FOOTER === -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="country-selector mb-3">
+      <a href="#" class="footer-link">
+        <i class="fas fa-globe"></i> GreenWave <i class="fas fa-chevron-down small"></i>
+      </a>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row pt-4">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Kontak</a></li>
+          <li><a href="#">Bekerja di GreenWave</a></li>
+          <li><a href="#">Pers</a></li>
+          <li><a href="#">Supporter Care</a></li>
+          <li><a href="#">Peta Situs</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Hak Cipta</a></li>
+          <li><a href="#">Ketentuan</a></li>
+          <li><a href="#">Kebijakan Komunitas</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Arsip</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Follow us</h6>
+        <ul class="list-unstyled social-icons d-flex gap-3">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright-bar text-center py-3">
+  <p class="mb-0 small">
+    © GreenWave 2025 | Kecuali dinyatakan sebaliknya, salinan situs web dilisensikan dengan 
+    <a href="#" class="copyright-link">Lisensi Internasional CC-BY</a>
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

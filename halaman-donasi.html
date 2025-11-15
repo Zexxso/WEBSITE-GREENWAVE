@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenWave - Makes Life Better !</title>
+
+  <link rel="icon" href="asset/image/logo-mini-16x16.png" type="image/png">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top scrolled">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <!-- HAMBURGER BUTTON (mobile only) -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <i class="fas fa-bars fs-4 text-dark"></i>
+    </button>
+
+    <a class="navbar-brand mx-auto" href="index.html">
+      <img src="asset/image/logo-rev-copy.png" alt="GreenWave Logo" class="logo-main d-none d-lg-block">
+      
+      <img src="asset/image/logo-rev-mobile.png" alt="GreenWave Logo" class="logo-mobile d-lg-none">
+    </a>
+
+    <!-- MENU DESKTOP -->
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start mt-3 mt-lg-0">
+
+        <!-- Tentang Kami -->
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="tentang-kami.html" role="button">Tentang Kami</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-1/tim-kami.html">Tim Kami</a></li>
+            <li><a class="dropdown-item" href="sub-menu-1/laporan-tahunan.html">Laporan Tahunan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-1/pekerjaan.html">Pekerjaan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-1/faq.html">Pertanyaan Umum</a></li>
+          </ul>
+        </li>
+
+        <!-- Fokus Kerja -->
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="fokus-kerja.html" role="button">Fokus Kerja</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-2/hutan.html">Hutan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/iklim-energi.html">Iklim & Energi</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/laut.html">Laut</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/kota.html">Perkotaan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-2/masa-depan.html">Masa Depan Alternatif</a></li>
+          </ul>
+        </li>
+
+        <!-- Link lain -->
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="kabar-terbaru.html" role="button">Kabar Terbaru</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-3/siaran-pers.html">Siaran Pers</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/cerita.html">Cerita</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/riset.html">Riset</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/kemenangan.html">Kemenangan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-3/siniar.html">Siniar</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown nav-item-line position-relative">
+          <a class="nav-link dropdown-toggle" href="mari-beraksi.html" role="button">Mari Beraksi</a>
+          <ul class="custom-dropdown">
+            <li><a class="dropdown-item" href="sub-menu-4/bergabung-relawan.html">Bergabung Relawan</a></li>
+            <li><a class="dropdown-item" href="sub-menu-4/petisi.html">Petisi</a></li>
+            <li><a class="dropdown-item" href="sub-menu-4/magang.html">Magang</a></li>
+            <li><a class="dropdown-item" href="sub-menu-4/berlangganan-informasi.html">Berlangganan Informasi</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a href="donasi.html" class="btn btn-donasi">Donasi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-sub-nav d-lg-none">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="fokus-kerja.html">Fokus Kerja</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="kabar-terbaru.html">Kabar Terbaru</a> </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mari-beraksi.html">Mari Beraksi</a> </li>
+    </ul>
+</div>
+
+
+<!-- OFF Canvas Mobile Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  
+  <div class="offcanvas-header">
+    <a href="#">
+        <img src="asset/image/logo-mini.png" alt="GreenWave Logo" class="logo-mobile-offcanvas">
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body d-flex flex-column p-0">
+    
+    <div class="accordion accordion-flush mobile-nav-accordion" id="mobileMenuAccordion">
+      
+      <div class="mobile-nav-item">
+        <a href="index.html" class="nav-link-top">Home</a>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingOne">
+          <a href="tentang-kami.html" class="nav-link-split">
+            Tentang Kami
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-1/tim-kami.html" class="dropdown-item">Tim Kami</a>
+            <a href="sub-menu-1/laporan-tahunan.html" class="dropdown-item">Laporan Tahunan</a>
+            <a href="sub-menu-1/pekerjaan.html" class="dropdown-item">Pekerjaan</a>
+            <a href="sub-menu-1/faq.html" class="dropdown-item">Pertanyaan Umum</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingTwo">
+          <a href="fokus-kerja.html" class="nav-link-split">
+            Fokus Kerja
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-2/hutan.html" class="dropdown-item">Hutan</a>
+            <a href="sub-menu-2/iklim.html" class="dropdown-item">Iklim & Energi</a>
+            <a href="sub-menu-2/laut.html" class="dropdown-item">Laut</a>
+            <a href="sub-menu-2/kota.html" class="dropdown-item">Perkotaan</a>
+            <a href="sub-menu-2/masa-depan.html" class="dropdown-item">Masa Depan Alternatif</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingThree">
+          <a href="kabar-terbaru.html" class="nav-link-split">
+            Kabar Terbaru
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-3/siaran-pers.html" class="dropdown-item">Siaran Pers</a>
+            <a href="sub-menu-3/cerita.html" class="dropdown-item">Cerita</a>
+            <a href="sub-menu-3/riset.html" class="dropdown-item">Riset</a>
+            <a href="sub-menu-3/kemenangan.html" class="dropdown-item">Kemenangan</a>
+            <a href="sub-menu-3/siniar.html" class="dropdown-item">Siniar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header custom-split-header" id="headingFour">
+          <a href="mari-beraksi.html" class="nav-link-split">
+            Mari Beraksi
+          </a>
+          <button class="accordion-toggle-split collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" aria-label="Buka submenu">
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#mobileMenuAccordion">
+          <div class="accordion-body">
+            <a href="sub-menu-4/bergabung-relawan.html" class="dropdown-item">Bergabung Relawan</a>
+            <a href="sub-menu-4/petisi.html" class="dropdown-item">Petisi</a>
+            <a href="sub-menu-4/magang.html" class="dropdown-item">Magang</a>
+            <a href="sub-menu-4/berlangganan-informasi.html" class="dropdown-item">Berlangganan Informasi</a>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+    <div class="mt-auto p-3">
+      <a href="donasi.html" class="btn btn-donasi w-100">
+          Donasi
+      </a>
+    </div>
+    
+  </div> </div>
+
+<section class="donasi-hero-section">
+  
+  <div class="donasi-hero-overlay"></div>
+  
+  <div class="container">
+    
+    <div class="row justify-content-end align-items-center">
+      
+      <div class="col-lg-5 col-md-7">
+        
+        <div class="donation-form-card">
+          
+          <h2 class="donation-title">Donasi Anda Akan Menyelamatkan Bumi</h2>
+          <p class="donation-subtitle">
+            Mulai dari kebakaran hutan sampai banjir, Bumi kita membutuhkan bantuan segera. Greenwave Indonesia bekerja agar suara Bumi didengar oleh pencemar terbesarnya. Kami membutuhkan Anda untuk membantu perjuangan kami tetap berlanjut.
+          </p>
+
+          <div class="btn-group btn-freq-group" role="group">
+            <input type="radio" class="btn-check" name="donasi-freq" id="freq-bulanan" autocomplete="off" checked>
+            <label class="btn btn-freq" for="freq-bulanan">Bulanan</label>
+
+            <input type="radio" class="btn-check" name="donasi-freq" id="freq-sekali" autocomplete="off">
+            <label class="btn btn-freq" for="freq-sekali">Satu Kali</label>
+          </div>
+
+          <div id="amount-options-container" class="mt-3">
+            </div>
+
+          <p id="donation-note-text" class="donation-note">
+            </p>
+          
+          <div class="d-grid mt-3">
+            <button id="cta-submit-button" class="btn cta-submit-btn btn-lg">DONASI SEKARANG</button>
+          </div>
+
+          <p class="security-text">
+            <i class="fas fa-lock"></i> Pembayaran AmanDonasi yang kamu berikan terjamin oleh enkripsi SSL
+          </p>
+          
+        </div> </div> </div> </div>
+</section>
+
+<section class="action-info-section py-5">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <div class="col-lg-6">
+        <div class="image-action-box">
+          <h2 class="image-action-title">
+            Apakah kamu mau mengambil aksi menyelamatkan Bumi yang rapuh?
+          </h2>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="text-action-box">
+          
+          <p class="action-info-text">
+            Berdonasi sekarang untuk mewujudkan lingkungan yang lebih hijau dan damai!
+          </p>
+
+          <div class="accordion custom-accordion" id="donasiAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Donasimu mendanai 5 hal ini:
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#donasiAccordion">
+                <div class="accordion-body">
+                  <p>Donasimu akan digunakan langsung mendanai kampanye kami:</p>
+                  <ol>
+                    <li>Mengungkap kerusakan lingkungan.</li>
+                    <li>Melakukan riset berdasar sains.</li>
+                    <li>Mengambil tindakan langsung menggunakan aksi konfrontatif, kreatif dan tanpa kekerasan.</li>
+                    <li>Mendesak pemerintah dan industri untuk menyadari tanggung jawab dan peran mereka untuk ikut mengatasi masalah lingkungan.</li>
+                    <li>Menyatukan kekuatan masyarakat dan mengadvokasi kebijakan dan solusi ramah lingkungan.</li>
+                  </ol>
+                  <p>Independensi kami sangat penting bagi keefektifan kerja kampanye kami, kami hanya menerima donasi dari individu dan kami tidak menerima dana dari pemerintah, perusahaan, atau partai politik.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Krisis iklim dan kehidupan kita:
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#donasiAccordion">
+                <div class="accordion-body">
+                    <p style="font-weight: bolder;">Krisis iklim yang sudah hadir di depan mata kita dan kamu bisa membantu mendorong solusi!</p>
+                    <p>Dampak krisis iklim di Indonesia semakin dekat. Mulai dari bencana banjir bandang, gelombang panas, kebakaran hutan, tanah longsor, naiknya permukaan air laut, pemutihan karang di laut, krisis air bersih, polusi udara yang merenggut nyawa, sampai ancaman kepunahan flora dan fauna.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Solusi krisis iklim:
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#donasiAccordion">
+                <div class="accordion-body">
+                  <p>Dengan dukungan donasi darimu, Greenwave dapat memiliki lebih banyak sumber daya dan kekuatan untuk mendorong solusi krisis iklim agar kondisi bumi dapat lebih lestari dan damai untuk kehidupan sekarang dan masa depan yang lebih baik.</p>
+                  <p style="font-weight: bolder;">Segera ambil aksimu dan berdonasi untuk membantu kampanye kami lebih kuat dan berdampak.</p>
+                </div>
+              </div>
+            </div>
+
+          </div> </div> </div> </div> </div> </section>
+
+<section class="faq-flip-section py-5">
+  <div class="container">
+    
+    <!-- === Judul Section === -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="faq-section-title">
+          Pertanyaan yang sering diajukan (FAQ)
+        </h2>
+      </div>
+    </div>
+
+    <!-- === Baris Kartu === -->
+    <div class="row g-4">
+
+      <!-- [KARTU 1] -->
+      <div class="col-lg-4 col-md-6">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Sisi Depan (Hijau) -->
+            <div class="flip-card-front">
+              <i class="fas fa-credit-card flip-icon"></i>
+              <h5 class="flip-title">Mengapa donasi bulanan sangat penting dan didebit dari kartu kredit atau kartu debit?</h5>
+            </div>
+            <!-- Sisi Belakang (Biru) -->
+            <div class="flip-card-back">
+              <p class="flip-text">Pekerjaan untuk melindungi lingkungan adalah perjuangan yang panjang. Oleh karenanya, kami memerlukan dana yang berkelanjutan. Pendebetan dari kartu debit atau kartu kredit memastikan keberlanjutan pekerjaan dan usaha dalam melindungi lingkungan. Metode tersebut juga lebih aman dan transparan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- [KARTU 2] -->
+      <div class="col-lg-4 col-md-6">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Sisi Depan (Hijau) -->
+            <div class="flip-card-front">
+              <i class="fas fa-receipt flip-icon"></i>
+              <h5 class="flip-title">Apakah saya bisa meminta tanda terima donasi yang sudah saya berikan?</h5>
+            </div>
+            <!-- Sisi Belakang (Biru) -->
+            <div class="flip-card-back">
+              <p class="flip-text">Greenwave akan memberikan tanda terima donasi 1 tahun (annual receipt) untuk donatur bulanan dan mengirimkannya ke alamat email donatur. Jika Anda memberikan donasi satu-kali, setelah donasi berhasil, donatur akan langsung menerima tanda terima elektronik melalui email. Untuk pertanyaan lebih lanjut, silakan menghubungi Tim Supporter Care kami.</p>
+              <a href="404.html" class="btn btn-flip">Hubungi Kami</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- [KARTU 3] (Sesuai Gambar) -->
+      <div class="col-lg-4 col-md-6">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Sisi Depan (Hijau) -->
+            <div class="flip-card-front">
+              <i class="fas fa-user-edit flip-icon"></i>
+              <h5 class="flip-title">Apakah saya dapat mengubah status donasi saya?</h5>
+            </div>
+            <!-- Sisi Belakang (Biru) -->
+            <div class="flip-card-back">
+              <p class="flip-text">Jangan khawatir, Anda dapat mengetahui status donasi dan menanyakan pertanyaan seputar perubahan donasi dengan mengirimkan email kepada Tim Supporter Care kami.</p>
+              <a href="404.html" class="btn btn-flip">Hubungi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+
+<section class="testimonial-profile-section py-5">
+  <div class="container">
+    
+    <div class="row g-4">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="testimonial-profile-card">
+          <img src="asset/image/testimoni-donatur-1.jpg" alt="Yulisa Saptawati" class="testimonial-profile-img">
+          <h5 class="testimonial-profile-name">Yulisa Saptawati (55 tahun)</h5>
+          <p class="testimonial-profile-text">
+            Senang bisa berpartisipasi untuk penyelamatan lingkungan meski dari hal yang sangat kecil. Greenwave merespon dengan sangat baik. Saya ingin terus terlibat di GreenWave untuk berusaha menyelamatkan lingkungan dan bumi. Satu-satunya bumi kita semua. Terima kasih.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="testimonial-profile-card">
+          <img src="asset/image/testimoni-donatur-2.jpg" alt="Sarah Nur Intan" class="testimonial-profile-img">
+          <h5 class="testimonial-profile-name">Sarah Nur Intan</h5>
+          <p class="testimonial-profile-text">
+            Saya sangat senang bisa menjadi bagian dari keluarga besar Greenwave Indonesia. Greenwave Indonesia memungkinkan saya untuk mulai ikut menjaga alam melalui gerakan sederhana, seperti donasi dan kampanye digital, ketika saya belum bisa turun langsung sebagai relawan. Greenwave Indonesia juga telah menjadi sumber informasi dan pembimbing bagi saya untuk mulai melakukan hal-hal baik yang berdampak positif bagi lingkungan dan kita semua. Untuk pelayanan, sejauh ini masih baik. Terima kasih, Greenwave Indonesia.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="testimonial-profile-card">
+          <img src="asset/image/testimoni-donatur-3.jpg" alt="Muliyadi" class="testimonial-profile-img">
+          <h5 class="testimonial-profile-name">Muliyadi (46 tahun)</h5>
+          <p class="testimonial-profile-text">
+            Saya ingin menjadi lebih perhatian lagi terhadap lingkungan dan berusaha melakukannya dari hal2 kecil dilingkungan keluarga serta lingkungan kerja agar tetap lestari. Salam Hijau Damai 💚
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="testimonial-profile-card">
+          <img src="asset/image/testimoni-donatur-4.jpg" alt="Miftah Shoffan" class="testimonial-profile-img">
+          <h5 class="testimonial-profile-name">Miftah Shoffan (27 tahun)</h5>
+          <p class="testimonial-profile-text">
+            Saya selalu update informasi di instagram Greenwave Indonesia. Kedepannya saya harap lebih fokus pada permasalahan hutan dan lingkungan, masyarakat adat, dan energi terbarukan dengan mengkritisi langsung lembaga-lembaga terkait. Berharap Greenwave bisa banyak bekerjasama lagi dengan NGO lain dan bersama membuat inovasi teknologi terbarukan juga.
+          </p>
+        </div>
+      </div>
+
+    </div> </div> </section>
+
+<section class="stats-section py-5" id="stats-section">
+  <div class="container">
+    
+    <div class="row mb-5">
+      <div class="col-lg-4">
+        <h2 class="stats-section-title">
+          BAGAIMANA KAMI MENGGUNAKAN DONASIMU
+        </h2>
+      </div>
+      <div class="col-lg-8">
+        <p class="stats-section-text">
+          <strong>Distribusi keuangan dalam setiap isu kampanye di Greenwave Asia Tenggara</strong>
+        </p>
+        <p class="stats-section-text">
+          Di Asia Tenggara, kami memiliki 58,665 pendukung finansial dari semua bentuk kehidupan yang membantu pekerjaan kami.
+        </p>
+        <p class="stats-section-text">
+          Karena orang seperti kamu, kami mampu berkampanye untuk masa depan yang lebih hijau.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 row-cols-2 row-cols-lg-5 text-center">
+      
+      <div class="col">
+        <div class="stat-item">
+          <h3 class="stat-number" data-target="41">0%</h3>
+          <p class="stat-label">HUTAN</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="stat-item">
+          <h3 class="stat-number" data-target="17">0%</h3>
+          <p class="stat-label">LAUT</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="stat-item">
+          <h3 class="stat-number" data-target="18.5">0.0%</h3>
+          <p class="stat-label">IKLIM & ENERGI</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="stat-item">
+          <h3 class="stat-number" data-target="18.5">0.0%</h3>
+          <p class="stat-label">FOOD FOR LIFE</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="stat-item">
+          <h3 class="stat-number" data-target="5">0%</h3>
+          <p class="stat-label">LAIN-LAIN</p>
+        </div>
+      </div>
+      
+    </div> <div class="row mt-5">
+      <div class="col-12 text-center stat-cta-box">
+        <h4 class="stat-cta-title">Punya pertanyaan seputar donasi?</h4>
+        <p class="stat-cta-email">
+          Kirimkan email ke tim Supporter Care kami:
+          <a href="mailto:supporterservices.id@greenwave.org">supporterservices.id@greenwave.org</a>
+        </p>
+      </div>
+    </div>
+    
+  </div> </section>
+
+<!-- Footer  -->
+  <footer class="site-footer">
+  <div class="container">
+    
+    <div class="country-selector mb-3">
+      <a href="#" class="footer-link">
+        <i class="fas fa-globe"></i> GreenWave <i class="fas fa-chevron-down small"></i>
+      </a>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row pt-4">
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Kontak</a></li>
+          <li><a href="#">Bekerja di GreenWave</a></li>
+          <li><a href="#">Pers</a></li>
+          <li><a href="#">Supporter Care</a></li>
+          <li><a href="#">Peta Situs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Hak Cipta</a></li>
+          <li><a href="#">Ketentuan</a></li>
+          <li><a href="#">Kebijakan Komunitas</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Arsip</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Follow us</h6>
+        <ul class="list-unstyled social-icons d-flex gap-3">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li> <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright-bar">
+  <div class="container text-center">
+    <p class="mb-0 small">
+      © GreenWave 2025 | Kecuali dinyatakan sebaliknya, salinan situs web dilisensikan dengan 
+      <a href="#" class="copyright-link">Lisensi Internasional CC-BY</a>
+    </p>
+  </div>
+</div>
+
+  <!-- Bootstrap JS (bundle includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>

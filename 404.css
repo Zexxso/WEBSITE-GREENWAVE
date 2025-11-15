@@ -1,0 +1,174 @@
+/* =================================
+   BASE & MOBILE STYLES (404.css)
+   ================================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    /* Warna latar hijau dari gambar */
+    background-color: #73ed5d; 
+    color: #222; /* Warna teks gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Barlow', sans-serif;
+}
+
+.error-container {
+    display: flex;
+    /* Mobile: Tumpuk ke bawah, rata tengah */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    width: 90%;
+}
+
+/* Bagian Brand (Logo Teks) - Mobile */
+.brand-info {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.brand-logo-text {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800; /* Ekstra tebal */
+    font-size: 2.5rem; /* Ukuran di mobile */
+    margin: 0;
+}
+
+.brand-slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Bagian Konten Error - Mobile */
+.error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-illustration {
+    position: relative; /* Kunci untuk menumpuk gambar */
+    display: inline-block; /* Agar bisa di-center */
+    margin-bottom: 1.5rem;
+}
+
+.error-code {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    font-size: 10rem; /* Ukuran 404 di mobile */
+    line-height: 1;
+    position: relative;
+    z-index: 1; /* Di bawah ilustrasi */
+}
+
+.illustration-img {
+    position: absolute; /* Melayang di atas angka */
+    z-index: 10; /* Di atas angka 404 */
+    width: 120px; /* Ukuran ilustrasi di mobile */
+    
+    /* === PERUBAHAN DI SINI (MOBILE) === */
+    top: 15px;
+    left: 50%; /* Posisikan 50% dari kiri */
+    transform: translateX(-50%); /* Geser ke kiri 50% dari lebarnya sendiri = PAS TENGAH */
+    /* Hapus: right: 25px; */
+}
+
+.error-message {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    max-width: 300px; /* Batasi lebar teks */
+    margin: 1.5rem 0 2rem 0;
+}
+
+.home-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #222;
+    border: 2px solid #222;
+    border-radius: 50px; /* Tombol kapsul */
+    padding: 0.8rem 2.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+
+/* =================================
+   DESKTOP STYLES (Layar > 768px)
+   ================================= */
+@media (min-width: 768px) {
+    
+    .error-container {
+        /* Desktop: 2 kolom, rata kiri */
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+        max-width: 1000px;
+        gap: 4rem; /* Jarak antar 2 kolom */
+    }
+
+    /* Kolom Kiri: Brand */
+    .brand-info {
+        align-items: flex-start;
+        text-align: left;
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .brand-logo-text {
+        font-size: 3.5rem; /* Lebih besar di desktop */
+    }
+
+    .brand-slogan {
+        font-size: 1.25rem;
+    }
+
+    /* Kolom Kanan: Error */
+    .error-content {
+        align-items: flex-start;
+    }
+
+    .error-illustration {
+        margin-bottom: 1rem;
+    }
+    
+    .error-code {
+        font-size: 15rem; /* Jauh lebih besar di desktop */
+    }
+
+    .illustration-img {
+        width: 200px; /* Ilustrasi lebih besar */
+        
+        /* === PERUBAHAN DI SINI (DESKTOP) === */
+        top: 25px;
+        left: 50%; /* Posisikan 50% dari kiri */
+        transform: translateX(-50%); /* Geser ke kiri 50% dari lebarnya sendiri = PAS TENGAH */
+        /* Hapus: right: 40px; */
+    }
+    
+    .error-message {
+        font-size: 2rem;
+        max-width: 500px; /* Teks lebih lebar */
+        margin: 1.5rem 0 2.5rem 0;
+    }
+    
+    .home-button {
+        padding: 1rem 3rem; /* Tombol lebih besar */
+        font-size: 1rem;
+    }
+}
