@@ -2256,6 +2256,7 @@ button,
 /* Tombol Outline (Selamatkan Hutan Papua) */
 .btn-outline-dark-green {
   font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
   font-weight: 600;
   color: #222;
   border: 2px solid #222;

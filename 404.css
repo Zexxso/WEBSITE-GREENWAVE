@@ -67,18 +67,6 @@ body {
     z-index: 1; /* Di bawah ilustrasi */
 }
 
-.illustration-img {
-    position: absolute; /* Melayang di atas angka */
-    z-index: 10; /* Di atas angka 404 */
-    width: 120px; /* Ukuran ilustrasi di mobile */
-    
-    /* === PERUBAHAN DI SINI (MOBILE) === */
-    top: 15px;
-    left: 50%; /* Posisikan 50% dari kiri */
-    transform: translateX(-50%); /* Geser ke kiri 50% dari lebarnya sendiri = PAS TENGAH */
-    /* Hapus: right: 25px; */
-}
-
 .error-message {
     font-family: 'Barlow', sans-serif;
     font-weight: 700;
@@ -149,16 +137,6 @@ body {
     
     .error-code {
         font-size: 15rem; /* Jauh lebih besar di desktop */
-    }
-
-    .illustration-img {
-        width: 200px; /* Ilustrasi lebih besar */
-        
-        /* === PERUBAHAN DI SINI (DESKTOP) === */
-        top: 25px;
-        left: 50%; /* Posisikan 50% dari kiri */
-        transform: translateX(-50%); /* Geser ke kiri 50% dari lebarnya sendiri = PAS TENGAH */
-        /* Hapus: right: 40px; */
     }
     
     .error-message {
